@@ -1,0 +1,104 @@
+title: "Linear Algebra"
+access_rules:
+ - roles: student
+   start: end week 1
+   end: end week 1
+   credit_percent: 100
+
+ - roles: student
+   start: end week 1
+   end: end week 1
+   credit_percent: 100
+
+flow_groups:
+ - id: intro
+
+    - type: page
+      title: "Linear algebra recap"
+      content: |
+
+        Yadda yadda.
+
+        .. html::
+
+          <iframe width="420" height="315" src="//www.youtube.com/embed/QH2-TGUlwu4" frameborder="0" allowfullscreen></iframe>
+
+ - id: quiz
+   random_order: true
+   page_count: 3
+   tag_minimums:
+    - knowledge: 1
+   time_limit: 15m
+   allowed_visit_count: 2
+   pages:
+
+    - type: question_text
+      id: eigvec
+      title: What's an eigenvector?
+      tags: knowledge
+      value: 2
+      prompt: |
+
+        Yadda ___________________ yadda.
+
+      answers:
+
+        - plain:matrix
+        - plain:(?:linear )?map
+        - regex:(?:operator )?map
+
+    - type: question_symbolic
+      id: neumann
+      title: Neumann series
+      tags: reasoning
+      value: 5
+      prompt: |
+
+        What's $\operatorname{Id} + A + A^2 +A^3+\cdots$?
+
+      answers:
+
+        - 1/(1-A)
+
+
+    - type: question_choice
+      id: lsq
+      tags: knowledge
+      title: Least squares problems
+      value: 1
+      prompt: |
+
+        Let $m\ge n$ and $\bm A$ be an $m\times n$ matrix. Which of the
+        following conditions suffices to guarantee that
+        the least squares system $\bm A \bm x\cong \bm b$ has a \emph{unique}
+        solution?
+
+      choices:
+
+        - Always
+        - When $\operatorname{rank}(\bm A)=m$
+        - #CORRECT# When $\operatorname{rank}(\bm A)=n$
+        - When $\bm b$ lies in $\operatorname{span}(\bm A)$
+
+
+    - type: question_choice
+      id: krylov
+      tags: [knowledge, p5]
+      title: Krylov-space methods
+      value: 2
+      prompt: What form of a matrix is produced by Arnoldi iteration?
+
+      choices:
+
+        - #CORRECT# Upper Hessenberg form
+        - Diagonal
+        - Schur form
+        - Tridiagonal form
+
+ - id: outro
+
+    - type: page
+      title: "Thanks"
+      content: |
+
+        Thanks for completing the linear algebra quiz.

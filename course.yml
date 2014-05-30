@@ -1,0 +1,26 @@
+name: Numerical Methods
+number: CS357
+run: Fall 2014
+description: |
+
+  yadda yadd ReST
+
+# datespec: start week 1, end week 3, 2014-05-29
+course_start: 2014-08-25
+course_end: 2014-12-10
+modules:
+
+  - title: "Welcome to 357"
+    shown_to: [ta, instructor]
+    weight:
+      # negative weights won't be shown
+      - value: 100
+        end: end week 3
+      - value: 0
+
+    content:
+
+      Hi there!
+      =========
+
+      :flow:`quiz_linalg`
