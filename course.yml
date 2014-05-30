@@ -19,7 +19,7 @@ modules:
         end: end week 3
       - value: 0
 
-    content:
+    content: |
 
       Hi there!
       =========
