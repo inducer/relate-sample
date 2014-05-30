@@ -12,6 +12,7 @@ access_rules:
 
 flow_groups:
  - id: intro
+   pages:
 
     - type: page
       title: "Linear algebra recap"
