@@ -97,6 +97,7 @@ flow_groups:
         - Tridiagonal form
 
  - id: outro
+   pages:
 
     - type: page
       title: "Thanks"
