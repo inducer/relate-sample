@@ -21,7 +21,6 @@ modules:
 
     content: |
 
-      Hi there!
-      =========
+      # Hi there!
 
       :flow:`quiz_linalg`
