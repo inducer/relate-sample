@@ -1,36 +1,50 @@
 title: "Linear Algebra"
-access_rules:
- - roles: student
-   start: end week 1
-   end: end week 1
-   credit_percent: 100
+description: |
 
- - roles: student
-   start: end week 1
+  Yadda yadda.
+
+access_rules:
+ - roles: [student]
+   start: start week 1
    end: end week 1
-   credit_percent: 100
+   time_limit: 15m
+   allowed_visit_count: 2
+   access: credit
+
+ - roles: [student]
+   start: start week 2
+   end: start week 2
+   credit_percent: 50
+   access: credit
+
+ - roles: [student]
+   start: start week 3
+   credit_percent: 50
+   access: review
+
+ - roles: [ta, instructor]
+   access: credit
+
+ - roles: [unenrolled]
+   access: deny
 
 flow_groups:
  - id: intro
    pages:
 
     - type: page
-      title: "Linear algebra recap"
+      title: "Linear algebra quiz"
       content: |
 
-        Yadda yadda.
+        # Welcome to the linear algebra quiz!
 
-        .. html::
-
-          <iframe width="420" height="315" src="//www.youtube.com/embed/QH2-TGUlwu4" frameborder="0" allowfullscreen></iframe>
+        Don't be scared.
 
  - id: quiz
    random_order: true
    page_count: 3
    tag_minimums:
     - knowledge: 1
-   time_limit: 15m
-   allowed_visit_count: 2
    pages:
 
     - type: question_text
