@@ -11,6 +11,7 @@ course_end: 2014-12-10
 modules:
 
   - title: "Welcome to 357"
+    id: welcome
     shown_to: [ta, instructor]
     weight:
       # negative weights won't be shown
