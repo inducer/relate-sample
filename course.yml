@@ -23,4 +23,4 @@ modules:
 
       # Hi there!
 
-      :flow:`quiz_linalg`
+      Please take the [linear algebra quiz](flow:quiz_linalg)
