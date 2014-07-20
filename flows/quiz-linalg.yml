@@ -41,16 +41,11 @@ flow_groups:
         Don't be scared.
 
  - id: quiz
-   random_order: true
-   page_count: 3
-   tag_minimums:
-    - knowledge: 1
    pages:
 
     - type: question_text
       id: eigvec
       title: What's an eigenvector?
-      tags: knowledge
       value: 2
       prompt: |
 
@@ -65,7 +60,6 @@ flow_groups:
     - type: question_symbolic
       id: neumann
       title: Neumann series
-      tags: reasoning
       value: 5
       prompt: |
 
@@ -78,7 +72,6 @@ flow_groups:
 
     - type: question_choice
       id: lsq
-      tags: knowledge
       title: Least squares problems
       value: 1
       prompt: |
@@ -98,7 +91,6 @@ flow_groups:
 
     - type: question_choice
       id: krylov
-      tags: [knowledge, p5]
       title: Krylov-space methods
       value: 2
       prompt: What form of a matrix is produced by Arnoldi iteration?
