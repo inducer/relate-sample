@@ -23,7 +23,7 @@ flow_groups:
         </iframe>
 
     - type: page
-      id: to-quiz
+      id: to_quiz
       content: |
 
         Now you're ready to take the [quiz](flow:quiz-linalg).
