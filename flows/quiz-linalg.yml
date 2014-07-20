@@ -20,7 +20,7 @@ access_rules:
  - roles: [student]
    start: start week 3
    credit_percent: 50
-   permissions: [start_no_credit, review]
+   permissions: [start_no_credit, review_past]
 
  - permissions: []
 
