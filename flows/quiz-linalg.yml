@@ -106,6 +106,7 @@ flow_groups:
    pages:
 
     - type: page
+      id: outro
       title: "Thanks"
       content: |
 
