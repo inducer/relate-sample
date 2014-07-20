@@ -7,7 +7,7 @@ access_rules:
  - roles: [student, unenrolled, ta, instructor]
    access: allow
 
- - access: den
+ - access: deny
 
 flow_groups:
  - id: intro
