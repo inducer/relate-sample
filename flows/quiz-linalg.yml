@@ -9,23 +9,20 @@ access_rules:
    end: end week 1
    time_limit: 15m
    allowed_visit_count: 2
-   access: credit
+   permissions: [start_credit]
 
  - roles: [student]
    start: start week 2
    end: start week 2
    credit_percent: 50
-   access: credit
+   permissions: [start_credit]
 
  - roles: [student]
    start: start week 3
    credit_percent: 50
-   access: review
+   permissions: [start_no_credit, review]
 
- - roles: [ta, instructor]
-   access: credit
-
- - access: deny
+ - permissions: []
 
 flow_groups:
  - id: intro
