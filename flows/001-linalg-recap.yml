@@ -4,10 +4,10 @@ description: |
   Yadda yadda.
 
 access_rules:
- - roles: [student, unenrolled, ta, instructor]
-   access: allow
+ - roles: [student, ta, instructor]
+   permissions: [start_no_credit]
 
- - access: deny
+ - permissions: []
 
 flow_groups:
  - id: intro
