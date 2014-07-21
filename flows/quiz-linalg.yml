@@ -40,7 +40,7 @@ groups:
  - id: quiz
    pages:
 
-    - type: question_text
+    - type: TextQuestion
       id: eigvec
       title: What's an eigenvector?
       value: 2
@@ -54,7 +54,7 @@ groups:
         - plain:(?:linear )?map
         - regex:(?:operator )?map
 
-    - type: question_symbolic
+    - type: SymbolicQuestion
       id: neumann
       title: Neumann series
       value: 5
@@ -67,7 +67,7 @@ groups:
         - 1/(1-A)
 
 
-    - type: question_choice
+    - type: ChoiceQuestion
       id: lsq
       title: Least squares problems
       value: 1
@@ -86,7 +86,7 @@ groups:
         - When $\bm b$ lies in $\operatorname{span}(\bm A)$
 
 
-    - type: question_choice
+    - type: ChoiceQuestion
       id: krylov
       title: Krylov-space methods
       value: 2
