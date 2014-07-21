@@ -9,18 +9,18 @@ access_rules:
    end: end week 1
    time_limit: 15m
    allowed_visit_count: 2
-   permissions: [start_credit]
+   permissions: [view, start_credit]
 
  - roles: [student]
    start: start week 2
    end: start week 2
    credit_percent: 50
-   permissions: [start_credit]
+   permissions: [view, start_credit]
 
  - roles: [student]
    start: start week 3
    credit_percent: 50
-   permissions: [start_no_credit, view_past]
+   permissions: [view, start_no_credit, view_past]
 
  - permissions: []
 

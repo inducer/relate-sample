@@ -5,7 +5,7 @@ description: |
 
 access_rules:
  - roles: [student, ta, instructor]
-   permissions: [start_no_credit]
+   permissions: [view, start_no_credit]
 
  - permissions: []
 
