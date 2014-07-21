@@ -25,6 +25,7 @@ groups:
 
     - type: Page
       id: to_quiz
+      title: Vectors
       content: |
 
         A vector is pretty straight.
