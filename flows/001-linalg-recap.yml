@@ -9,7 +9,7 @@ access_rules:
 
  - permissions: []
 
-flow_groups:
+groups:
  - id: intro
    pages:
 
