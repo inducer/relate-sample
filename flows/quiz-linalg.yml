@@ -28,7 +28,7 @@ groups:
  - id: intro
    pages:
 
-    - type: page
+    - type: Page
       id: welcome
       title: "Linear algebra quiz"
       content: |
