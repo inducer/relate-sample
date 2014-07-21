@@ -26,4 +26,8 @@ groups:
       id: to_quiz
       content: |
 
-        Now you're ready to take the [quiz](flow:quiz-linalg).
+        A vector is pretty straight.
+
+completion_text: |
+
+  Now you're ready to take the [quiz](flow:quiz-linalg).

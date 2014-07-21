@@ -99,12 +99,6 @@ groups:
         - Schur form
         - Tridiagonal form
 
- - id: outro
-   pages:
+completion_text: |
 
-    - type: page
-      id: outro
-      title: "Thanks"
-      content: |
-
-        Thanks for completing the linear algebra quiz.
+  Thanks for completing the linear algebra quiz.
