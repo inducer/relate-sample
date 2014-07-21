@@ -15,6 +15,7 @@ groups:
 
     - type: Page
       id: intro
+      title: Welcome!
       content: |
 
         Yadda yadda.
