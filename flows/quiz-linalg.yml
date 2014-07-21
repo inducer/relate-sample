@@ -4,20 +4,20 @@ description: |
   Yadda yadda.
 
 access_rules:
- - roles: [student]
+ - roles: [student, ta, instructor]
    start: start week 1
    end: end week 1
    time_limit: 15m
    allowed_visit_count: 2
    permissions: [view, start_credit]
 
- - roles: [student]
+ - roles: [student, ta, instructor]
    start: start week 2
    end: start week 2
    credit_percent: 50
    permissions: [view, start_credit]
 
- - roles: [student]
+ - roles: [student, ta, instructor]
    start: start week 3
    credit_percent: 50
    permissions: [view, start_no_credit, view_past]
@@ -100,5 +100,7 @@ groups:
         - Tridiagonal form
 
 completion_text: |
+
+  # See you in class!
 
   Thanks for completing the linear algebra quiz.

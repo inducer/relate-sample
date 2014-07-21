@@ -1,7 +1,9 @@
 title: "Linear Algebra"
 description: |
 
-  Yadda yadda.
+  # Linear Algebra Recap
+
+  This is going to teach you the linear algebra.
 
 access_rules:
  - roles: [student, ta, instructor]
@@ -18,6 +20,8 @@ groups:
       title: Welcome!
       content: |
 
+        # A little distraction to start
+
         Yadda yadda.
 
         <iframe width="420" height="315" src="//www.youtube.com/embed/QH2-TGUlwu4" frameborder="0" allowfullscreen>
@@ -28,8 +32,12 @@ groups:
       title: Vectors
       content: |
 
+        # Vectors
+
         A vector is pretty straight.
 
 completion_text: |
+
+  # End of Linear Algebra Recap
 
   Now you're ready to take the [quiz](flow:quiz-linalg).
