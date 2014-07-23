@@ -51,7 +51,7 @@ groups:
 
       answers:
 
-        - matrix
+        - plain:matrix
         - regex:(?:linear )? map
         - regex:(?:operator )? map
 
