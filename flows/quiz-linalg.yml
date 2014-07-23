@@ -78,16 +78,16 @@ groups:
 
         # Least squares problems
 
-        Let $m\ge n$ and $\boldysmbol A$ be an $m\times n$ matrix. Which of the
+        Let $m\ge n$ and $\boldsymbol A$ be an $m\times n$ matrix. Which of the
         following conditions suffices to guarantee that
-        the least squares system $\boldysmbol A \boldysmbol x\cong \boldysmbol b$ 
+        the least squares system $\boldsymbol A \boldsymbol x\cong \boldsymbol b$ 
         has a *unique* solution?
 
       choices:
 
         - Always
         - When $\operatorname{rank}(\bm A)=m$
-        - $CORRECT$ When $\operatorname{rank}(\bm A)=n$
+        - %CORRECT% When $\operatorname{rank}(\bm A)=n$
         - When $\bm b$ lies in $\operatorname{span}(\bm A)$
 
 
@@ -103,7 +103,7 @@ groups:
 
       choices:
 
-        - $CORRECT$ Upper Hessenberg form
+        - %CORRECT% Upper Hessenberg form
         - Diagonal
         - Schur form
         - Tridiagonal form
