@@ -52,8 +52,8 @@ groups:
       answers:
 
         - plain:matrix
-        - regex:(?:linear )? map
-        - regex:(?:operator )? map
+        - regex:(?:linear\s+)?\s*map
+        - regex:(?:operator\s+)?\s*map
 
     - type: SymbolicQuestion
       id: neumann
