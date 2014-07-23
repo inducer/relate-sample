@@ -87,7 +87,7 @@ groups:
 
         - Always
         - When $\operatorname{rank}(\bm A)=m$
-        - @CORRECT When $\operatorname{rank}(\bm A)=n$
+        - $CORRECT$ When $\operatorname{rank}(\bm A)=n$
         - When $\bm b$ lies in $\operatorname{span}(\bm A)$
 
 
@@ -103,7 +103,7 @@ groups:
 
       choices:
 
-        - @CORRECT@ Upper Hessenberg form
+        - $CORRECT$ Upper Hessenberg form
         - Diagonal
         - Schur form
         - Tridiagonal form
