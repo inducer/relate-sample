@@ -61,6 +61,8 @@ groups:
       value: 5
       prompt: |
 
+        # Neumann series
+
         What's $\operatorname{Id} + A + A^2 +A^3+\cdots$?
 
       answers:
@@ -74,6 +76,8 @@ groups:
       value: 1
       prompt: |
 
+        # Least squares problems
+
         Let $m\ge n$ and $\bm A$ be an $m\times n$ matrix. Which of the
         following conditions suffices to guarantee that
         the least squares system $\bm A \bm x\cong \bm b$ has a \emph{unique}
@@ -83,7 +87,7 @@ groups:
 
         - Always
         - When $\operatorname{rank}(\bm A)=m$
-        - #CORRECT# When $\operatorname{rank}(\bm A)=n$
+        - @CORRECT When $\operatorname{rank}(\bm A)=n$
         - When $\bm b$ lies in $\operatorname{span}(\bm A)$
 
 
@@ -91,11 +95,15 @@ groups:
       id: krylov
       title: Krylov-space methods
       value: 2
-      prompt: What form of a matrix is produced by Arnoldi iteration?
+      prompt: |
+
+        # Krylov-space methods
+
+        What form of a matrix is produced by Arnoldi iteration?
 
       choices:
 
-        - #CORRECT# Upper Hessenberg form
+        - @CORRECT@ Upper Hessenberg form
         - Diagonal
         - Schur form
         - Tridiagonal form
