@@ -86,9 +86,9 @@ groups:
       choices:
 
         - Always
-        - When $\operatorname{rank}(\bm A)=m$
-        - ~CORRECT~ When $\operatorname{rank}(\bm A)=n$
-        - When $\bm b$ lies in $\operatorname{span}(\bm A)$
+        - When $\operatorname{rank}(\boldsymbol A)=m$
+        - ~CORRECT~ When $\operatorname{rank}(\boldsymbol A)=n$
+        - When $\boldsymbol b$ lies in $\operatorname{span}(\boldsymbol A)$
 
 
     - type: ChoiceQuestion
