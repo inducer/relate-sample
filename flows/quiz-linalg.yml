@@ -6,7 +6,6 @@ description: |
 access_rules:
  - roles: [student, ta, instructor]
    end: end week 1
-   time_limit: 15m
    allowed_visit_count: 2
    permissions: [view, start_credit]
 
