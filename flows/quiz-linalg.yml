@@ -18,10 +18,11 @@ access_rules:
 
  - roles: [student, ta, instructor]
    start: start week 3
-   credit_percent: 50
-   permissions: [view, start_no_credit, view_past]
+   permissions: [view, start_no_credit, view_past, see_correctness, see_answer]
 
  - permissions: []
+
+grade_aggregation_strategy: max_percent
 
 groups:
  - id: intro
