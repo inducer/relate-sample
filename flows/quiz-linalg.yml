@@ -23,7 +23,7 @@ access_rules:
 
  - permissions: []
 
-grade_aggregation_strategy: max_percent
+grade_aggregation_strategy: max_grade
 
 groups:
  - id: intro
