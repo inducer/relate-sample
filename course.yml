@@ -8,7 +8,9 @@ chunks:
     id: welcome
     rules:
       - weight: 100
-        end: end week 3
+        end: end_week 3
+
+      - weight: 0
 
     content: |
 
