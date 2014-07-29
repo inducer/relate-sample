@@ -1,13 +1,7 @@
 name: Numerical Methods
 number: CS357
 run: Fall 2014
-description: |
 
-  yadda yadd ReST
-
-# datespec: start week 1, end week 3, 2014-05-29
-course_start: 2014-08-25
-course_end: 2014-12-10
 chunks:
 
   - title: "Welcome to 357"
@@ -30,7 +24,7 @@ chunks:
       Look at the amazing embedded [PDF](media:pdfs/sample.pdf).
 
       Remember, this image shows the model that CourseFlow is trying to put out
-      of busineness:
+      of business:
 
       <img src="media:images/classroom.jpeg">
 
@@ -40,4 +34,3 @@ chunks:
         *CourseFlow* <i class="fa fa-heart"></i>
         <img src="media:images/django-logo.png">.
       </div>
-
