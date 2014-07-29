@@ -8,7 +8,7 @@ description: |
 access_rules:
  - roles: [student, ta, instructor]
    end: end week 1
-   allowed_visit_count: 2
+   allowed_session_count: 2
    permissions: [view, start_credit]
 
  - roles: [student, ta, instructor]
