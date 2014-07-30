@@ -58,13 +58,13 @@ groups:
         - regex:(?:operator\s+)?\s*map
 
     - type: repo:simple_questions.MyTextQuestion
-      id: eigvec
+      id: eigval
       title: Eigenvalues
       prompt: |
 
-        # What's an eigenvalue?
+        # Eigenvalues
 
-        Yadda ___________________ yadda.
+        What's an eigenvalue?
 
       answers:
 
