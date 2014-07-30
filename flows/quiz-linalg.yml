@@ -105,7 +105,9 @@ groups:
         - When $\operatorname{rank}(\boldsymbol A)=m$
         - ~CORRECT~ When $\operatorname{rank}(\boldsymbol A)=n$
         - When $\boldsymbol b$ lies in $\operatorname{span}(\boldsymbol A)$
+        - This is a really long option, but *certainly* not the correct one.
 
+          Instead, it tests whether Markdown works in choice questions.
 
     - type: ChoiceQuestion
       id: krylov
