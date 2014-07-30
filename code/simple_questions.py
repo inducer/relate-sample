@@ -25,8 +25,8 @@ THE SOFTWARE.
 """
 
 from course.validation import (
-        validate_struct, validate_markup, markup_to_html, ValidationError)
-from course.page import PageBase, AnswerFeedback
+        validate_struct, validate_markup, ValidationError)
+from course.page import PageBase, AnswerFeedback, markup_to_html
 from crispy_forms.helper import FormHelper
 import django.forms as forms
 
