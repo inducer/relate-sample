@@ -66,7 +66,7 @@ class MyTextQuestion(PageBase):
             raise ValidationError("%s: at least one answer must be provided"
                     % location)
 
-        validate_markup(vctx, location, page_desc.content)
+        validate_markup(vctx, location, page_desc.prompt)
 
         PageBase.__init__(self, vctx, location, page_desc.id)
         self.page_desc = page_desc
