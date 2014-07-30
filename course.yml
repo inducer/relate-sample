@@ -34,5 +34,9 @@ chunks:
 
       <div class="well" markdown="1">
         *CourseFlow* <i class="fa fa-heart"></i>
-        <img src="media:images/django-logo.png">.
+        <a href="https://djangoproject.com/"><img src="media:images/django-logo.png"></a>.
+
+        (Note that all of this is sample content. CourseFlow does not clutter
+        your course page with information about itself.)
       </div>
+
