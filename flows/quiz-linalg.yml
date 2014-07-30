@@ -57,6 +57,20 @@ groups:
         - regex:(?:linear\s+)?\s*map
         - regex:(?:operator\s+)?\s*map
 
+    - type: repo:simple_questions.MyTextQuestion
+      id: eigvec
+      title: Eigenvalues
+      prompt: |
+
+        # What's an eigenvalue?
+
+        Yadda ___________________ yadda.
+
+      answers:
+
+        - scalar
+        - number
+
     - type: SymbolicQuestion
       id: neumann
       title: Neumann series
