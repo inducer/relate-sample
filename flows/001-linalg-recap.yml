@@ -20,12 +20,15 @@ groups:
       title: Welcome!
       content: |
 
+        [JINJA]
+
         # A little distraction to start
 
         Yadda yadda.
 
-        <iframe width="420" height="315" src="//www.youtube.com/embed/QH2-TGUlwu4" frameborder="0" allowfullscreen>
-        </iframe>
+        {% from "macros.jinja" import youtube %}
+
+        {{ youtube("QH2-TGUlwu4") }}
 
     - type: Page
       id: to_quiz
