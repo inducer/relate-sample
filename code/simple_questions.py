@@ -68,7 +68,7 @@ class MyTextQuestion(PageBase):
 
         validate_markup(vctx, location, page_desc.content)
 
-        PageBase.__init__(self, location, page_desc.id)
+        PageBase.__init__(self, vctx, location, page_desc.id)
         self.page_desc = page_desc
 
     def title(self, page_context, page_data):
