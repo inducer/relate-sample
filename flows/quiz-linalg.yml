@@ -1,9 +1,9 @@
 title: "Linear Algebra"
 description: |
 
-  # Linear Algebra Quiz
+    # Linear Algebra Quiz
 
-  Yadda yadda.
+    Yadda yadda.
 
 access_rules:
  - roles: [student, ta, instructor]
@@ -29,105 +29,111 @@ groups:
  - id: intro
    pages:
 
-    - type: Page
-      id: welcome
-      title: "Linear algebra quiz"
-      content: |
+    -
+        type: Page
+        id: welcome
+        title: "Linear algebra quiz"
+        content: |
 
-        # Welcome to the linear algebra quiz!
+            # Welcome to the linear algebra quiz!
 
-        Don't be scared.
+            Don't be scared.
 
  - id: quiz
    pages:
 
-    - type: TextQuestion
-      id: eigvec
-      title: Eigenvectors
-      value: 2
-      prompt: |
+    -
+        type: TextQuestion
+        id: eigvec
+        title: Eigenvectors
+        value: 2
+        prompt: |
 
-        # What's an eigenvector?
+            # What's an eigenvector?
 
-        Yadda ___________________ yadda.
+            Yadda ___________________ yadda.
 
-      answers:
+        answers:
 
-        - plain:matrix
-        - regex:(?:linear\s+)?\s*map
-        - regex:(?:operator\s+)?\s*map
+          - plain:matrix
+          - regex:(?:linear\s+)?\s*map
+          - regex:(?:operator\s+)?\s*map
 
-    - type: repo:simple_questions.MyTextQuestion
-      id: eigval
-      title: Eigenvalues
-      prompt: |
+    -
+        type: repo:simple_questions.MyTextQuestion
+        id: eigval
+        title: Eigenvalues
+        prompt: |
 
-        # Eigenvalues
+            # Eigenvalues
 
-        What's an eigenvalue?
+            What's an eigenvalue?
 
-      answers:
+        answers:
 
-        - scalar
-        - number
+          - scalar
+          - number
 
-    - type: SymbolicQuestion
-      id: neumann
-      title: Neumann series
-      value: 5
-      prompt: |
+    -
+        type: SymbolicQuestion
+        id: neumann
+        title: Neumann series
+        value: 5
+        prompt: |
 
-        # Neumann series
+          # Neumann series
 
-        What's $\operatorname{Id} + A + A^2 +A^3+\cdots$?
+            What's $\operatorname{Id} + A + A^2 +A^3+\cdots$?
 
-      answers:
+        answers:
 
-        - 1/(1-A)
+          - 1/(1-A)
 
 
-    - type: ChoiceQuestion
-      id: lsq
-      title: Least squares problems
-      value: 1
-      prompt: |
+    -
+        type: ChoiceQuestion
+        id: lsq
+        title: Least squares problems
+        value: 1
+        prompt: |
 
-        # Least squares problems
+            # Least squares problems
 
-        Let $m\ge n$ and $\boldsymbol A$ be an $m\times n$ matrix. Which of the
-        following conditions suffices to guarantee that
-        the least squares system $\boldsymbol A \boldsymbol x\cong \boldsymbol b$ 
-        has a *unique* solution?
+            Let $m\ge n$ and $\boldsymbol A$ be an $m\times n$ matrix. Which of the
+            following conditions suffices to guarantee that
+            the least squares system $\boldsymbol A \boldsymbol x\cong \boldsymbol b$
+            has a *unique* solution?
 
-      choices:
+        choices:
 
-        - Always
-        - When $\operatorname{rank}(\boldsymbol A)=m$
-        - ~CORRECT~ When $\operatorname{rank}(\boldsymbol A)=n$
-        - When $\boldsymbol b$ lies in $\operatorname{span}(\boldsymbol A)$
-        - This is a really long option, but *certainly* not the correct one.
+          - Always
+          - When $\operatorname{rank}(\boldsymbol A)=m$
+          - ~CORRECT~ When $\operatorname{rank}(\boldsymbol A)=n$
+          - When $\boldsymbol b$ lies in $\operatorname{span}(\boldsymbol A)$
+          - This is a really long option, but *certainly* not the correct one.
 
-          Instead, it tests whether Markdown works in choice questions.
+            Instead, it tests whether Markdown works in choice questions.
 
-    - type: ChoiceQuestion
-      id: krylov
-      title: Krylov-space methods
-      value: 2
-      prompt: |
+    -
+        type: ChoiceQuestion
+        id: krylov
+        title: Krylov-space methods
+        value: 2
+        prompt: |
 
-        # Krylov-space methods
+            # Krylov-space methods
 
-        What form of a matrix is produced by Arnoldi iteration?
+            What form of a matrix is produced by Arnoldi iteration?
 
-      choices:
+        choices:
 
-        - ~CORRECT~ Upper Hessenberg form
-        - Diagonal
-        - Schur form
-        - Tridiagonal form
+          - ~CORRECT~ Upper Hessenberg form
+          - Diagonal
+          - Schur form
+          - Tridiagonal form
 
 completion_text: |
 
-  # See you in class!
+    # See you in class!
 
-  Thanks for completing the linear algebra quiz.
+    Thanks for completing the linear algebra quiz.

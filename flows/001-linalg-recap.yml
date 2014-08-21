@@ -1,9 +1,9 @@
 title: "Linear Algebra"
 description: |
 
-  # Linear Algebra Recap
+    # Linear Algebra Recap
 
-  This is going to teach you the linear algebra.
+    This is going to teach you the linear algebra.
 
 access_rules:
  - roles: [student, ta, instructor]
@@ -15,32 +15,34 @@ groups:
  - id: intro
    pages:
 
-    - type: Page
-      id: intro
-      title: Welcome!
-      content: |
+    -
+        type: Page
+        id: intro
+        title: Welcome!
+        content: |
 
-        [JINJA]
+            [JINJA]
 
-        # A little distraction to start
+            # A little distraction to start
 
-        Yadda yadda.
+            Yadda yadda.
 
-        {% from "macros.jinja" import youtube %}
+            {% from "macros.jinja" import youtube %}
 
-        {{ youtube("QH2-TGUlwu4") }}
+            {{ youtube("QH2-TGUlwu4") }}
 
-    - type: Page
-      id: to_quiz
-      title: Vectors
-      content: |
+    -
+        type: Page
+        id: to_quiz
+        title: Vectors
+        content: |
 
-        # Vectors
+            # Vectors
 
-        A vector is pretty straight.
+            A vector is pretty straight.
 
 completion_text: |
 
-  # End of Linear Algebra Recap
+    # End of Linear Algebra Recap
 
-  Now you're ready to take the [quiz](flow:quiz-linalg).
+    Now you're ready to take the [quiz](flow:quiz-linalg).
