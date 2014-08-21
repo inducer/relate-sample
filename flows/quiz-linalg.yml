@@ -95,6 +95,7 @@ groups:
         id: lsq
         title: Least squares problems
         value: 1
+        shuffle: True
         prompt: |
 
             # Least squares problems
