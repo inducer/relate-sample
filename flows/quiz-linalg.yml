@@ -55,9 +55,10 @@ groups:
 
         answers:
 
-          - plain:matrix
-          - regex:(?:linear\s+)?\s*map
-          - regex:(?:operator\s+)?\s*map
+          - <plain>matrix
+          - <case_sens_plain>Eigenmatrix
+          - <regex>(?:linear\s+)?\s*map
+          - <case_sens_regex>(?:operator\s+)?\s*map
 
     -
         type: repo:simple_questions.MyTextQuestion
@@ -75,7 +76,7 @@ groups:
           - number
 
     -
-        type: SymbolicQuestion
+        type: TextQuestion
         id: neumann
         title: Neumann series
         value: 5
@@ -87,8 +88,7 @@ groups:
 
         answers:
 
-          - 1/(1-A)
-
+          - <sym_expr>1/(1-A)
 
     -
         type: ChoiceQuestion
