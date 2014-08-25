@@ -138,6 +138,7 @@ groups:
         id: addition
         title: Adding two numbers in Python
         value: 1
+        timeout: 0.5
         prompt: |
 
             # Adding two numbers in Python
