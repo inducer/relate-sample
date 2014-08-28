@@ -8,22 +8,26 @@ description: |
 sticky_versioning: true
 
 access_rules:
- - roles: [student, ta, instructor]
+ - id: standard
+   roles: [student, ta, instructor]
    end: end_week 1
    allowed_session_count: 2
    permissions: [view, start_credit]
 
- - roles: [student, ta, instructor]
+ - id: grace50
+   roles: [student, ta, instructor]
    start: start_week 2
    end: start_week 2
    credit_percent: 50
    permissions: [view, start_credit]
 
- - roles: [student, ta, instructor]
+ - id: review
+   roles: [student, ta, instructor]
    start: start_week 3
    permissions: [view, start_no_credit, view_past, see_correctness, see_answer]
 
- - permissions: []
+ - id: fallback
+   permissions: []
 
 grade_aggregation_strategy: max_grade
 

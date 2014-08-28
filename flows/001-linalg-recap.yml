@@ -8,11 +8,12 @@ description: |
 sticky_versioning: true
 
 access_rules:
- - roles: [student, ta, instructor]
+ - id: standard
+   roles: [student, ta, instructor]
    permissions: [view, start_no_credit]
 
- - permissions: []
-
+ - id: fallback
+   permissions: []
 
 groups:
  - id: intro
