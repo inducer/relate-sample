@@ -5,11 +5,14 @@ description: |
 
     This is going to teach you the linear algebra.
 
+sticky_versioning: true
+
 access_rules:
  - roles: [student, ta, instructor]
    permissions: [view, start_no_credit]
 
  - permissions: []
+
 
 groups:
  - id: intro

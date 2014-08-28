@@ -5,6 +5,8 @@ description: |
 
     Yadda yadda.
 
+sticky_versioning: true
+
 access_rules:
  - roles: [student, ta, instructor]
    end: end_week 1
