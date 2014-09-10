@@ -12,14 +12,14 @@ access_rules:
    roles: [student, ta, instructor]
    end: end_week 1
    allowed_session_count: 2
-   permissions: [view, start_credit]
+   permissions: [view, start_credit, see_correctness, change_answer]
 
  - id: grace50
    roles: [student, ta, instructor]
    start: start_week 2
    end: start_week 2
    credit_percent: 50
-   permissions: [view, start_credit]
+   permissions: [view, start_credit, see_correctness, change_answer]
 
  - id: review
    roles: [student, ta, instructor]
