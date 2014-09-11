@@ -55,7 +55,7 @@ class MyTextQuestion(PageBase):
                     % location)
 
     def required_attrs(self):
-        return super(MyTextQuestion, self).required_attrs(
+        return super(MyTextQuestion, self).required_attrs() + (
             ("title", str),
             ("prompt", "markup"),
             ("answers", list),
