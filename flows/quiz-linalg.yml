@@ -5,7 +5,7 @@ description: |
 
     Yadda yadda.
 
-sticky_versioning: true
+sticky_versioning: false
 
 access_rules:
  - id: standard
