@@ -24,8 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 """
 
-from course.validation import (
-        validate_struct, validate_markup, ValidationError)
+from course.validation import ValidationError
 from course.page import PageBase, AnswerFeedback, markup_to_html
 from crispy_forms.helper import FormHelper
 import django.forms as forms
@@ -49,28 +48,18 @@ class TextAnswerForm(forms.Form):
 
 class MyTextQuestion(PageBase):
     def __init__(self, vctx, location, page_desc):
-        validate_struct(
-                location,
-                page_desc,
-                required_attrs=[
-                    ("type", str),
-                    ("id", str),
-                    ("title", str),
-                    ("answers", list),
-                    ("prompt", str),
-                    ],
-                allowed_attrs=[],
-                )
+        super(MyTextQuestion, self).__init__(vctx, location, page_desc)
 
         if len(page_desc.answers) == 0:
             raise ValidationError("%s: at least one answer must be provided"
                     % location)
 
-        if vctx is not None:
-            validate_markup(vctx, location, page_desc.prompt)
-
-        PageBase.__init__(self, vctx, location, page_desc.id)
-        self.page_desc = page_desc
+    def required_attrs(self):
+        return (
+            ("title", str),
+            ("prompt", "markup"),
+            ("answers", list),
+            )
 
     def title(self, page_context, page_data):
         return self.page_desc.title
