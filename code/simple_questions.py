@@ -109,7 +109,7 @@ class MyTextQuestion(PageBase):
 
         return AnswerFeedback(correctness=correctness)
 
-    def correct_answer(self, page_context, page_data):
+    def correct_answer(self, page_context, page_data, answer_data, grade_data):
         return ("A correct answer is: '%s'."
                 % self.page_desc.answers[0])
 
