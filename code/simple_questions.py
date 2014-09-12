@@ -94,15 +94,11 @@ class MyTextQuestion(PageBase):
         return {"answer": form.cleaned_data["answer"].strip()}
 
     def grade(self, page_context, page_data, answer_data, grade_data):
-        correct_answer_text = ("A correct answer is: '%s'."
-                % self.page_desc.answers[0])
-
         correctness = 0
 
         if answer_data is None:
             return AnswerFeedback(correctness=0,
-                    feedback="No answer provided.",
-                    correct_answer=correct_answer_text)
+                    feedback="No answer provided.")
 
         answer = answer_data["answer"]
 
@@ -111,8 +107,10 @@ class MyTextQuestion(PageBase):
                 correctness = 1
                 break
 
-        return AnswerFeedback(
-                correctness=correctness,
-                correct_answer=correct_answer_text)
+        return AnswerFeedback(correctness=correctness)
+
+    def correct_answer(self, page_context, page_data):
+        return ("A correct answer is: '%s'."
+                % self.page_desc.answers[0])
 
 # }}}
