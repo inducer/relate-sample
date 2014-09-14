@@ -26,21 +26,16 @@ THE SOFTWARE.
 
 from course.validation import ValidationError
 from course.page import PageBase, AnswerFeedback, markup_to_html
-from crispy_forms.helper import FormHelper
 import django.forms as forms
+from courseflow.utils import StyledForm
 
 
 # {{{ text question
 
-class TextAnswerForm(forms.Form):
+class TextAnswerForm(StyledForm):
     answer = forms.CharField(required=True)
 
     def __init__(self, *args, **kwargs):
-        self.helper = FormHelper()
-        self.helper.form_class = "form-horizontal"
-        self.helper.label_class = "col-lg-2"
-        self.helper.field_class = "col-lg-8"
-
         super(TextAnswerForm, self).__init__(*args, **kwargs)
 
         self.fields["answer"].widget.attrs["autofocus"] = None
