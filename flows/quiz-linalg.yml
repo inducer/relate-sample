@@ -196,6 +196,15 @@ groups:
 
             - application/pdf
 
+        rubric: |
+
+            A full-credit solution needs to:
+
+            * Use the inner product to make the argument (30%)
+            * Be readable (30%)
+            * Argue correctly (30%)
+            * Contain no formal mistakes (10%)
+
 completion_text: |
 
     # See you in class!
