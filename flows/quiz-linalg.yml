@@ -163,23 +163,38 @@ groups:
         names_from_user: [c]
 
         test_code: |
-            def grade():
-                if not isinstance(c, float):
-                    feedback.set_points(0)
-                    feedback.add_feedback("Your computed c is not a float.")
-                    return
+            if not isinstance(c, float):
+                feedback.finish(0, "Your computed c is not a float.")
 
-                correct_c = a + b
-                rel_err = abs(correct_c-c)/abs(correct_c)
+            correct_c = a + b
+            rel_err = abs(correct_c-c)/abs(correct_c)
 
-                if rel_err < 1e-7:
-                    feedback.set_points(1)
-                    feedback.add_feedback("Your computed c was correct.")
-                else:
-                    feedback.set_points(0)
-                    feedback.add_feedback("Your computed c was incorrect.")
+            if rel_err < 1e-7:
+                feedback.finish(1, "Your computed c was correct.")
+            else:
+                feedback.finish(0, "Your computed c was incorrect.")
 
-            grade()
+        correct_code: |
+
+            c = a + b
+
+    -
+        type: FileUploadQuestion
+        id: proof
+        value: 5
+        title: Pythagorean theorem
+        maximum_megabytes: 0.5
+        prompt: |
+
+            # Pythagorean theorem
+
+            Prove that $$\|a\|^2 +\|b\|^2=\|a + b\|^2$$ if $a\cdot b$ = 0.
+
+            In the file upload box below, provide a PDF with your writeup.
+
+        mime_types:
+
+            - application/pdf
 
 completion_text: |
 
