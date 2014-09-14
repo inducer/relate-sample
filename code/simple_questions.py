@@ -80,10 +80,10 @@ class MyTextQuestion(PageBase):
         if answer_is_final:
             form.fields['answer'].widget.attrs['readonly'] = True
 
-        return (form, None)
+        return form
 
     def post_form(self, page_context, page_data, post_data, files_data):
-        return (TextAnswerForm(post_data, files_data), None)
+        return TextAnswerForm(post_data, files_data)
 
     def answer_data(self, page_context, page_data, form, files_data):
         return {"answer": form.cleaned_data["answer"].strip()}
