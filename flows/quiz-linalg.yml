@@ -222,6 +222,11 @@ groups:
 
             The code has to be squeaky-clean.
 
+        initial_code: |
+
+            # Assign the product value to c.
+            c = ...
+
     -
         type: FileUploadQuestion
         id: proof
@@ -248,6 +253,7 @@ groups:
             * Be readable (30%)
             * Argue correctly (30%)
             * Contain no formal mistakes (10%)
+
 
 completion_text: |
 
