@@ -185,6 +185,9 @@ groups:
         value: 3
         human_feedback_value: 2
         timeout: 0.5
+        data_files:
+            - "question-data/random-data.npy"
+
         prompt: |
 
             # Multiplying two numbers in Python
@@ -198,7 +201,13 @@ groups:
             a = random.uniform(-10, 10)
             b = random.uniform(-10, 10)
 
-        names_for_user: [a, b]
+            from io import BytesIO
+            bio = BytesIO(data_files["question-data/random-data.npy"])
+
+            import numpy as np
+            data = np.load(bio)
+
+        names_for_user: [a, b, data]
 
         names_from_user: [c]
 
