@@ -278,12 +278,11 @@ groups:
 
             [JINJA]
 
-            {% from "macros.jinja" import collapsible %}
-
             # Submit an exam question
 
             Submit your practice exam question in the box below.
 
+            {% from "macros.jinja" import collapsible %}
             {% call collapsible("Instructions", id="instr") %}
             ```
             type: ChoiceQuestion
