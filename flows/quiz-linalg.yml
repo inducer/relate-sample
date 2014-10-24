@@ -284,6 +284,8 @@ groups:
 
             {% from "macros.jinja" import collapsible %}
             {% call collapsible("Instructions", id="instr") %}
+
+            Use this pattern as a starting point:
             ```
             type: ChoiceQuestion
             id: myquestion
