@@ -322,17 +322,17 @@ groups:
             * If you'd like to see what your question will look like, you can play with it
               [here](../../../sandbox/page/).
 
-            You will receive extra credit for the question if we determine that
-            you have done an 'honest job' trying to create a good exam
-            question--basically if we can tell that you've put some work into your
-            question.  For example, just copying and pasting a quiz question
-            and changing the numbers slightly does not count. You can look for
-            inspiration in the quizzes, though. Other sources of inspiration
-            include the notes, the textbook and the demos--basically any fact
-            that we've learned can be turned into a good question. Try to avoid
-            True/False questions--those are very easy to guess and therefore
-            not often good. Try to come up with good, confusing,
-            plausible-sounding (but wrong) alternatives.
+            You will receive the extra credit for your submitted question if we
+            determine that you have done an 'honest job' trying to create a
+            good exam question--basically if we can tell that you've put some
+            work into your question.  For example, just copying and pasting a
+            quiz question and changing the numbers slightly does not count. You
+            can look for inspiration in the quizzes, though. Other sources of
+            inspiration include the notes, the textbook and the
+            demos--basically any fact that we've learned can be turned into a
+            good question. Try to avoid True/False questions--those are very
+            easy to guess and therefore not often good. Try to come up with
+            good, confusing, plausible-sounding (but wrong) alternatives.
 
             {% endcall %}
 
