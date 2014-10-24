@@ -306,7 +306,8 @@ groups:
 
             A few comments on how the questions are written:
 
-            * You just need to change the prompt and the choices.
+            * You just need to change the `prompt` and the `choices`.
+              Leave everything else as it is.
             * If you like, you can assign an `id`. This field must be all
               lower-case alphanumeric, no spaces. Underscores `_` are allowed.
             * Bare numbers as answer choices must be enclosed in quotes.
