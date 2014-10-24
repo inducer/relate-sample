@@ -263,6 +263,56 @@ groups:
             * Argue correctly (30%)
             * Contain no formal mistakes (10%)
 
+    -
+        type: HumanGradedTextQuestion
+        id: hgtext
+        value: 5
+        widget: "editor:yaml"
+        validators:
+
+            -
+                type: cfpage
+                page_type: ChoiceQuestion
+
+        prompt: |
+
+            # Submit an exam question
+
+            Submit your practice exam question in the box below. Use the following code
+            as a pattern:
+
+            ```
+            type: ChoiceQuestion
+            id: lsq
+            shuffle: True
+            prompt: |
+
+                # What is your favorite number?
+
+                There are many beautiful numbers. What's your
+                favorite one?
+
+            choices:
+
+              - 1
+              - 2
+              - ~CORRECT~ $\pi$
+              - $\sqrt 2$
+            ```
+
+            Make sure to keep the indentation in place. If you'd like to see
+            what your question will look like, you can play with it
+            [here](../../sandbox/page/).
+
+            You will receive extra credit for the question if we determine that
+            you have done an 'honest job' trying to create a good exam
+            question.  For example, just copying and pasting a quiz question
+            and changing the numbers does not count. You can look for inspiration
+            there, though. Other sources of inspiration include the notes,
+            the textbook, 
+
+            Please try to emphasize the part of the class that will be on the
+            second midterm--that is to say, everything from orthogonality onward.
 
 completion_text: |
 
