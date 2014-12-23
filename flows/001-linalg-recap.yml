@@ -5,7 +5,6 @@ description: |
 
     This is going to teach you the linear algebra.
 
-sticky_versioning: true
 
 access_rules:
  - id: standard
