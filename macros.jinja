@@ -33,3 +33,27 @@
   </div>
 </div>
 {%- endmacro %}
+
+{% macro grace_rules(week) -%}
+access_rules:
+ - id: standard
+   roles: [student, ta, instructor]
+   end: end_week {{week}}
+   allowed_session_count: 2
+   permissions: [view, start_credit, see_correctness, change_answer]
+
+ - id: grace50
+   roles: [student, ta, instructor]
+   start: start_week {{week + 1}}
+   end: start_week {{week + 1}}
+   credit_percent: 50
+   permissions: [view, start_credit, see_correctness, change_answer]
+
+ - id: review
+   roles: [student, ta, instructor]
+   start: start_week {{week + 2}}
+   permissions: [view, start_no_credit, view_past, see_correctness, see_answer]
+
+ - id: fallback
+   permissions: []
+{%- endmacro %}
