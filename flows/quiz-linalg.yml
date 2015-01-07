@@ -5,30 +5,36 @@ description: |
 
     Yadda yadda.
 
+rules:
+  new_session:
+    -
+      if_before: end_week 1
+      if_has_role: [student, ta, instructor]
+      if_has_fewer_sessions_than: 2
 
-access_rules:
- - id: standard
-   roles: [student, ta, instructor]
-   end: end_week 1
-   allowed_session_count: 2
-   permissions: [view, start_credit, see_correctness, change_answer]
+  access:
+     -
+       if_before: end_week 2
+       permissions: [view, modify, see_correctness]
 
- - id: grace50
-   roles: [student, ta, instructor]
-   start: start_week 2
-   end: start_week 2
-   credit_percent: 50
-   permissions: [view, start_credit, see_correctness, change_answer]
+     -
+       permissions: [view, modify, see_correctness, see_answer]
 
- - id: review
-   roles: [student, ta, instructor]
-   start: start_week 3
-   permissions: [view, start_no_credit, view_past, see_correctness, see_answer]
+  grading:
+    -
+      if_completed_before: end_week 1
+      grade_identifier: la_quiz
+      grade_aggregation_strategy: max_grade
+      credit_percent: 100
 
- - id: fallback
-   permissions: []
+    -
+      if_completed_before: end_week 2
+      grade_identifier: la_quiz
+      grade_aggregation_strategy: max_grade
+      credit_percent: 50
 
-grade_aggregation_strategy: max_grade
+    -
+      grade_identifier: null
 
 groups:
  - id: intro

@@ -35,25 +35,34 @@
 {%- endmacro %}
 
 {% macro grace_rules(week) -%}
-access_rules:
- - id: standard
-   roles: [student, ta, instructor]
-   end: end_week {{week}}
-   allowed_session_count: 2
-   permissions: [view, start_credit, see_correctness, change_answer]
+rules:
+  new_session:
+    -
+      if_before: end_week {{ week }}
+      if_has_role: [student, ta, instructor]
+      if_has_fewer_sessions_than: 2
 
- - id: grace50
-   roles: [student, ta, instructor]
-   start: start_week {{week + 1}}
-   end: start_week {{week + 1}}
-   credit_percent: 50
-   permissions: [view, start_credit, see_correctness, change_answer]
+  access:
+     -
+       if_before: end_week {{ week + 1}}
+       permissions: [view, modify, see_correctness]
 
- - id: review
-   roles: [student, ta, instructor]
-   start: start_week {{week + 2}}
-   permissions: [view, start_no_credit, view_past, see_correctness, see_answer]
+     -
+       permissions: [view, modify, see_correctness, see_answer]
 
- - id: fallback
-   permissions: []
+  grading:
+    -
+      if_completed_before: end_week {{ week }}
+      grade_identifier: la_quiz
+      grade_aggregation_strategy: max_grade
+      credit_percent: 100
+
+    -
+      if_completed_before: end_week {{ week + 1 }}
+      grade_identifier: la_quiz
+      grade_aggregation_strategy: max_grade
+      credit_percent: 50
+
+    -
+      grade_identifier: null
 {%- endmacro %}

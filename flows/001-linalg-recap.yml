@@ -6,13 +6,14 @@ description: |
     This is going to teach you the linear algebra.
 
 
-access_rules:
- - id: standard
-   roles: [student, ta, instructor]
-   permissions: [view, start_no_credit]
+rules:
+  access:
+    -
+      if_has_role: [student, ta, instructor]
+      permissions: [view]
 
- - id: fallback
-   permissions: []
+  grading:
+    - grade_identifier: null
 
 groups:
  - id: intro
