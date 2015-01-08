@@ -323,7 +323,7 @@ groups:
               You may use LaTeX math, enclosed in `$...$` for in-line math and
               `$$...$$` for display math.
             * Make sure to keep the indentation in place, otherwise the question
-              won't be accepted by CourseFlow.
+              won't be accepted by RELATE.
             * If you'd like to see what your question will look like, you can play with it
               [here](../../../sandbox/page/).
 

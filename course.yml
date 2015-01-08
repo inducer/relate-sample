@@ -25,7 +25,7 @@ chunks:
 
       Look at the amazing embedded [PDF](media:pdfs/sample.pdf).
 
-      Remember, this image shows the model that CourseFlow is trying to put out
+      Remember, this image shows the model that RELATE is trying to put out
       of business:
 
       <img src="media:images/classroom.jpeg">
@@ -33,10 +33,10 @@ chunks:
       (![creative commons](media:images/cc.png)/by [kevin dooley](https://secure.flickr.com/photos/pagedooley/13905987989/) on Flickr)
 
       <div class="well" markdown="1">
-        *CourseFlow* <i class="fa fa-heart"></i>
+        *RELATE* <i class="fa fa-heart"></i>
         <a href="https://djangoproject.com/"><img src="media:images/django-logo.png"></a>.
 
-        (Note that all of this is sample content. CourseFlow does not clutter
+        (Note that all of this is sample content. RELATE does not clutter
         your course page with information about itself.)
       </div>
 
