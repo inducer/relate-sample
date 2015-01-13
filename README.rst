@@ -1,6 +1,6 @@
-Courseflow-sample
-=================
+relate-sample
+=============
 
-This is sample content for `courseflow
-<https://github.com/inducer/courseflow>`_. See there for more information.
+This is sample content for `relate
+<https://github.com/inducer/relate>`_. See there for more information.
 

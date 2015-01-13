@@ -27,7 +27,7 @@ THE SOFTWARE.
 from course.validation import ValidationError
 from course.page import PageBase, AnswerFeedback, markup_to_html
 import django.forms as forms
-from courseflow.utils import StyledForm
+from relate.utils import StyledForm
 
 
 # {{{ text question
