@@ -148,6 +148,9 @@ groups:
         type: PythonCodeQuestion
         id: addition
         title: Adding two numbers in Python
+        access_rules:
+            add_permissions:
+                - change_answer
         value: 1
         timeout: 0.5
         prompt: |
@@ -187,6 +190,9 @@ groups:
         type: PythonCodeQuestionWithHumanTextFeedback
         id: pymult
         title: Multiplying two numbers in Python
+        access_rules:
+            add_permissions:
+                - change_answer
         value: 3
         human_feedback_value: 2
         timeout: 0.5
