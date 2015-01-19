@@ -1,7 +1,7 @@
-title: "Linear Algebra"
+title: "RELATE Test Quiz"
 description: |
 
-    # Linear Algebra Quiz
+    # RELATE Test Quiz
 
     Yadda yadda.
 
@@ -49,10 +49,9 @@ groups:
     -
         type: Page
         id: welcome
-        title: "Linear algebra quiz"
         content: |
 
-            # Welcome to the linear algebra quiz!
+            # Welcome to the test quiz for RELATE!
 
             Don't be scared.
 
@@ -62,7 +61,6 @@ groups:
     -
         type: TextQuestion
         id: eigvec
-        title: Eigenvectors
         value: 2
         prompt: |
 
@@ -95,7 +93,6 @@ groups:
     -
         type: TextQuestion
         id: neumann
-        title: Neumann series
         value: 5
         prompt: |
 
@@ -110,7 +107,6 @@ groups:
     -
         type: ChoiceQuestion
         id: lsq
-        title: Least squares problems
         value: 1
         shuffle: True
         prompt: |
@@ -135,7 +131,6 @@ groups:
     -
         type: ChoiceQuestion
         id: krylov
-        title: Krylov-space methods
         value: 2
         prompt: |
 
@@ -153,7 +148,6 @@ groups:
     -
         type: PythonCodeQuestion
         id: addition
-        title: Adding two numbers in Python
         access_rules:
             add_permissions:
                 - change_answer
@@ -195,7 +189,6 @@ groups:
     -
         type: PythonCodeQuestionWithHumanTextFeedback
         id: pymult
-        title: Multiplying two numbers in Python
         access_rules:
             add_permissions:
                 - change_answer
@@ -257,7 +250,6 @@ groups:
         type: FileUploadQuestion
         id: proof
         value: 5
-        title: Pythagorean theorem
         maximum_megabytes: 0.5
         prompt: |
 
@@ -288,7 +280,7 @@ groups:
         validators:
 
             -
-                type: cfpage
+                type: relate_page
                 page_type: ChoiceQuestion
 
         prompt: |
@@ -359,6 +351,40 @@ groups:
         rubric: |
 
             (None yet)
+
+    -
+        type: SurveyTextQuestion
+        id: fear
+        widget: textarea
+        prompt: |
+
+            # Psychology Survey
+
+            What's your biggest fear?
+
+    -
+        type: SurveyChoiceQuestion
+        id: age_group
+        prompt: |
+
+            # Age
+
+            How old are you?
+
+        choices:
+
+            - 0-10 years
+            - 11-20 years
+            - 21-30 years
+            - 31-40 years
+            - 41-50 years
+            - 51-60 years
+            - 61-70 years
+            - 71-80 years
+            - 81-90 years
+            - older
+
+
 
 completion_text: |
 
