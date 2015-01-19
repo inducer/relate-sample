@@ -107,4 +107,11 @@ class MyTextQuestion(PageBase):
     def correct_answer(self, page_context, page_data, answer_data, grade_data):
         return "A correct answer is: '%s'." % self.page_desc.answers[0]
 
+    def normalized_answer(self, page_context, page_data, answer_data):
+        if answer_data is None:
+            return None
+
+        from django.utils.html import escape
+        return escape(answer_data["answer"])
+
 # }}}
