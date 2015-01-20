@@ -22,6 +22,7 @@ rules:
      -
        if_before: end_week 2
        permissions: [view, modify, see_correctness]
+       message: "Welcome! This message is brought to you by the access rules."
 
      -
        permissions: [view, modify, see_correctness, see_answer]
