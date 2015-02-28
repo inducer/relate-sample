@@ -7,8 +7,8 @@ chunks:
   - title: "Welcome to 357"
     id: welcome
     rules:
-      - weight: 100
-        end: end_week 3
+      - if_before: end_week 3
+        weight: 100
 
       - weight: 0
 
