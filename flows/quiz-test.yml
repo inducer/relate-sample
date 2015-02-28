@@ -77,22 +77,6 @@ groups:
           - <case_sens_regex>(?:operator\s+)?\s*map
 
     -
-        type: repo:simple_questions.MyTextQuestion
-        id: eigval
-        # This title remains required because MyTextQuestion needs it.
-        title: "Eigenvalues"
-        prompt: |
-
-            # Eigenvalues
-
-            What's an eigenvalue?
-
-        answers:
-
-          - scalar
-          - number
-
-    -
         type: TextQuestion
         id: neumann
         value: 5
@@ -405,6 +389,25 @@ groups:
             - 81-90 years
             - older
 
+    # {{{ Custom page type implemented within this repository
+
+    -
+        type: repo:simple_questions.MyTextQuestion
+        id: eigval
+        # This title remains required because MyTextQuestion needs it.
+        title: "Eigenvalues"
+        prompt: |
+
+            # Eigenvalues
+
+            What's an eigenvalue?
+
+        answers:
+
+          - scalar
+          - number
+
+    # }}}
 
 
 completion_text: |
