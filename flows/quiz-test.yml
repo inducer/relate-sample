@@ -235,6 +235,9 @@ groups:
     -
         type: FileUploadQuestion
         id: proof
+        access_rules:
+            add_permissions:
+                - change_answer
         value: 5
         maximum_megabytes: 0.5
         prompt: |
@@ -261,6 +264,9 @@ groups:
     -
         type: FileUploadQuestion
         id: anyup
+        access_rules:
+            add_permissions:
+                - change_answer
         value: 5
         maximum_megabytes: 0.5
         prompt: |
