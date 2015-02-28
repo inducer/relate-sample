@@ -79,7 +79,6 @@ groups:
     -
         type: repo:simple_questions.MyTextQuestion
         id: eigval
-        title: Eigenvalues
         prompt: |
 
             # Eigenvalues
@@ -272,6 +271,25 @@ groups:
             * Be readable (30%)
             * Argue correctly (30%)
             * Contain no formal mistakes (10%)
+
+    -
+        type: FileUploadQuestion
+        id: anyup
+        value: 5
+        maximum_megabytes: 0.5
+        prompt: |
+
+            # Upload your favorite file
+
+            Upload anything you like below.
+
+        mime_types:
+
+            - any
+
+        rubric: |
+
+            Have they uploaded a file?
 
     -
         type: HumanGradedTextQuestion

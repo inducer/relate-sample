@@ -1,10 +1,6 @@
 title: "Linear Algebra"
 description: |
-
     # Linear Algebra Recap
-
-    This is going to teach you the linear algebra.
-
 
 rules:
   access:
@@ -22,7 +18,6 @@ groups:
     -
         type: Page
         id: intro
-        title: Welcome!
         content: |
 
             [JINJA]
@@ -32,13 +27,11 @@ groups:
             Yadda yadda.
 
             {% from "macros.jinja" import youtube %}
-
             {{ youtube("QH2-TGUlwu4") }}
 
     -
         type: Page
-        id: to_quiz
-        title: Vectors
+        id: vectors
         content: |
 
             # Vectors
