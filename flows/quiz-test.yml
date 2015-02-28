@@ -79,6 +79,8 @@ groups:
     -
         type: repo:simple_questions.MyTextQuestion
         id: eigval
+        # This title remains required because MyTextQuestion needs it.
+        title: "Eigenvalues"
         prompt: |
 
             # Eigenvalues
