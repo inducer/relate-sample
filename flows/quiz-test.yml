@@ -21,11 +21,11 @@ rules:
   access:
      -
        if_before: end_week 2
-       permissions: [view, modify, see_correctness]
+       permissions: [view, submit_answer, end_session, see_correctness]
        message: "Welcome! This message is brought to you by the access rules."
 
      -
-       permissions: [view, modify, see_correctness, see_answer]
+       permissions: [view, submit_answer, end_session, see_correctness, see_answer]
 
   grading:
     -
