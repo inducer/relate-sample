@@ -56,7 +56,6 @@ groups:
 
  - id: quiz
    shuffle: True
-   max_page_count: 5
    pages:
 
     -
