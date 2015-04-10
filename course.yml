@@ -4,7 +4,7 @@ run: Fall 2014
 
 chunks:
 
-  - title: "Welcome to 357"
+  - title: "Welcome to the sample course"
     id: welcome
     rules:
       - if_before: end_week 3
@@ -40,3 +40,20 @@ chunks:
         your course page with information about itself.)
       </div>
 
+  - title: "Exam pointer"
+
+    id: exam_pointer
+    rules:
+      - if_in_facility: test_center
+        weight: 200
+
+      - shown: False
+        weight: 0
+
+    content: |
+
+        <div class="well" markdown="1">
+        Welcome to the computer-based testing facility!
+
+        <a href="flow:exam-1" class="btn btn-default">Start exam &raquo;</a>
+        </div>

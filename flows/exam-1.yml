@@ -1,0 +1,68 @@
+title: "RELATE Test Exam"
+description: |
+
+    # RELATE Test Exam
+
+rules:
+  start:
+    -
+      if_has_fewer_sessions_than: 1
+      if_in_facility: test_center
+      may_start_new_session: True
+      may_list_existing_sessions: True
+
+    -
+      if_in_facility: test_center
+      may_start_new_session: False
+      may_list_existing_sessions: True
+
+    -
+      may_start_new_session: False
+      may_list_existing_sessions: False
+
+  access:
+     -
+       if_in_facility: test_center
+       permissions: [view, submit_answer, end_session, see_correctness]
+
+     -
+       permissions: []
+
+  grading:
+    -
+      grade_identifier: exam_1
+      grade_aggregation_strategy: max_grade
+      credit_percent: 100
+
+
+groups:
+ - id: intro
+   pages:
+
+    -
+        type: Page
+        id: welcome
+        content: |
+
+            # Welcome to the test exam for RELATE!
+
+            Don't be scared.
+
+    -
+        type: HumanGradedTextQuestion
+        id: hgtext
+        value: 5
+        widget: textarea
+        prompt: |
+
+            # Mark Twain
+
+            Discuss the literary work of Mark Twain.
+
+        rubric: |
+
+            Has something interesting to say.
+
+completion_text: |
+
+    You have successfully completed the test exam!
