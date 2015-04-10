@@ -363,7 +363,7 @@ groups:
 
     -
         type: SurveyTextQuestion
-        id: fears
+        id: fear
         widget: textarea
         prompt: |
 
