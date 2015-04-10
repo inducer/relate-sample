@@ -43,7 +43,6 @@ rules:
 
 groups:
  - id: intro
-   shuffle: True
    pages:
 
     -
@@ -56,6 +55,7 @@ groups:
             Don't be scared.
 
  - id: quiz
+   shuffle: True
    pages:
 
     -
