@@ -52,8 +52,6 @@ chunks:
 
     content: |
 
-        <div class="well" markdown="1">
-        Welcome to the computer-based testing facility!
+        # Welcome to the computer-based testing facility!
 
         <a href="flow:exam-1" class="btn btn-default">Start exam &raquo;</a>
-        </div>
