@@ -363,16 +363,6 @@ groups:
             (None yet)
 
     -
-        type: SurveyTextQuestion
-        id: fear
-        widget: textarea
-        prompt: |
-
-            # Psychology Survey
-
-            What's your biggest fear?
-
-    -
         type: SurveyChoiceQuestion
         id: age_group
         prompt: |
