@@ -43,6 +43,7 @@ rules:
 
 groups:
  - id: intro
+   shuffle: True
    pages:
 
     -
