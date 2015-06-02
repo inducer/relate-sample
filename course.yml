@@ -8,6 +8,8 @@ chunks:
     id: welcome
     rules:
       - if_before: end_week 3
+        if_before: 2038-01-01 13:00:00
+        if_after: 2015-06-01
         weight: 100
 
       - weight: 0
