@@ -8,7 +8,7 @@ rules:
     -
       if_before: end_week 1
       if_has_role: [student, ta, instructor]
-      if_has_fewer_sessions_than: 2
+      if_has_fewer_sessions_than: 4
       may_start_new_session: True
       may_list_existing_sessions: True
 
@@ -29,13 +29,13 @@ rules:
     -
       if_completed_before: end_week 1
       grade_identifier: la_quiz
-      grade_aggregation_strategy: max_grade
+      grade_aggregation_strategy: use_latest
       credit_percent: 100
 
     -
       if_completed_before: end_week 2
       grade_identifier: la_quiz
-      grade_aggregation_strategy: max_grade
+      grade_aggregation_strategy: use_latest
       credit_percent: 50
 
     -
