@@ -131,6 +131,47 @@ groups:
           - Tridiagonal form
 
     -
+        type: MultipleChoiceQuestion
+        id: ice_cream_toppings
+        value: 1
+        shuffle: True
+        prompt: |
+
+            # Ice Cream Toppings
+
+            Which of the following are ice cream toppings?
+
+        choices:
+
+          - ~CORRECT~ Sprinkles
+          - ~CORRECT~ Chocolate chunks
+          - Vacuum cleaner dust
+          - Spider webs
+          - ~CORRECT~ Almond bits
+
+    -
+        type: MultipleChoiceQuestion
+        id: matrix_props
+        value: 1
+        shuffle: True
+        allow_partial_credit: True
+        prompt: |
+
+            # Matrix properties
+
+            You know that the matrix $A$ satisfies $A=A^T$.
+
+            Which of the following is true about $A$?
+
+        choices:
+
+          - ~CORRECT~ $A$ has real eigenvalues.
+          - $A$ has eigenvalues with positive real part.
+          - $(x,y) = x^TAy$ is an inner product.
+          - ~CORRECT~ $A$ has orthogonal eigenvectors.
+          - $AA^T=I$
+
+    -
         type: PythonCodeQuestion
         id: addition
         access_rules:
