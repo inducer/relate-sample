@@ -1,2 +1,4 @@
 public:
 - "*.png"
+- "*.jpeg"
+- "*.jpg"
