@@ -11,8 +11,9 @@ description: |
 [/JINJA]
 
 groups:
- - id: intro
-   pages:
+-
+    id: intro
+    pages:
 
     -
         type: Page
@@ -24,8 +25,9 @@ groups:
 
             Don't be scared.
 
- - id: quiz
-   pages:
+-
+    id: quiz
+    pages:
 
     -
         type: TextQuestion
@@ -40,10 +42,10 @@ groups:
 
         answers:
 
-          - <plain>matrix
-          - <case_sens_plain>Eigenmatrix
-          - <regex>(?:linear\s+)?\s*map
-          - <case_sens_regex>(?:operator\s+)?\s*map
+        - <plain>matrix
+        - <case_sens_plain>Eigenmatrix
+        - <regex>(?:linear\s+)?\s*map
+        - <case_sens_regex>(?:operator\s+)?\s*map
 
 
 completion_text: |

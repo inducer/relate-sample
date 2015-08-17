@@ -4,40 +4,41 @@ description: |
     # RELATE Test Exam
 
 rules:
-  start:
+    start:
     -
-      if_has_fewer_sessions_than: 1
-      if_in_facility: test_center
-      may_start_new_session: True
-      may_list_existing_sessions: True
-
-    -
-      if_in_facility: test_center
-      may_start_new_session: False
-      may_list_existing_sessions: True
+        if_has_fewer_sessions_than: 1
+        if_in_facility: test_center
+        may_start_new_session: True
+        may_list_existing_sessions: True
 
     -
-      may_start_new_session: False
-      may_list_existing_sessions: False
+        if_in_facility: test_center
+        may_start_new_session: False
+        may_list_existing_sessions: True
 
-  access:
-     -
-       if_in_facility: test_center
-       permissions: [view, submit_answer, end_session, see_correctness]
-
-     -
-       permissions: []
-
-  grading:
     -
-      grade_identifier: exam_1
-      grade_aggregation_strategy: max_grade
-      credit_percent: 100
+        may_start_new_session: False
+        may_list_existing_sessions: False
+
+    access:
+    -
+        if_in_facility: test_center
+        permissions: [view, submit_answer, end_session, see_correctness]
+
+    -
+        permissions: []
+
+    grading:
+    -
+        grade_identifier: exam_1
+        grade_aggregation_strategy: max_grade
+        credit_percent: 100
 
 
 groups:
- - id: intro
-   pages:
+-
+    id: intro
+    pages:
 
     -
         type: Page

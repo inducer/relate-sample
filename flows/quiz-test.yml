@@ -4,46 +4,47 @@ description: |
     # RELATE Test Quiz
 
 rules:
-  start:
+    start:
     -
-      if_before: end_week 1
-      if_has_role: [student, ta, instructor]
-      if_has_fewer_sessions_than: 4
-      may_start_new_session: True
-      may_list_existing_sessions: True
-
-    -
-      may_start_new_session: False
-      may_list_existing_sessions: True
-
-  access:
-     -
-       if_before: end_week 2
-       permissions: [view, submit_answer, end_session, see_correctness]
-       message: "Welcome! This message is brought to you by the access rules."
-
-     -
-       permissions: [view, submit_answer, end_session, see_correctness, see_answer_after_submission]
-
-  grading:
-    -
-      if_completed_before: end_week 1
-      grade_identifier: la_quiz
-      grade_aggregation_strategy: use_latest
-      credit_percent: 100
+        if_before: end_week 1
+        if_has_role: [student, ta, instructor]
+        if_has_fewer_sessions_than: 4
+        may_start_new_session: True
+        may_list_existing_sessions: True
 
     -
-      if_completed_before: end_week 2
-      grade_identifier: la_quiz
-      grade_aggregation_strategy: use_latest
-      credit_percent: 50
+        may_start_new_session: False
+        may_list_existing_sessions: True
+
+    access:
+    -
+         if_before: end_week 2
+         permissions: [view, submit_answer, end_session, see_correctness]
+         message: "Welcome! This message is brought to you by the access rules."
 
     -
-      grade_identifier: null
+        permissions: [view, submit_answer, end_session, see_correctness, see_answer_after_submission]
+
+    grading:
+    -
+        if_completed_before: end_week 1
+        grade_identifier: la_quiz
+        grade_aggregation_strategy: use_latest
+        credit_percent: 100
+
+    -
+        if_completed_before: end_week 2
+        grade_identifier: la_quiz
+        grade_aggregation_strategy: use_latest
+        credit_percent: 50
+
+    -
+        grade_identifier: null
 
 groups:
- - id: intro
-   pages:
+-
+    id: intro
+    pages:
 
     -
         type: Page
@@ -54,9 +55,10 @@ groups:
 
             Don't be scared.
 
- - id: quiz
-   shuffle: True
-   pages:
+-
+    id: quiz
+    shuffle: True
+    pages:
 
     -
         type: TextQuestion

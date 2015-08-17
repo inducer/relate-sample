@@ -3,17 +3,19 @@ description: |
     # Linear Algebra Recap
 
 rules:
-  access:
+    access:
     -
-      if_has_role: [student, ta, instructor]
-      permissions: [view]
+        if_has_role: [student, ta, instructor]
+        permissions: [view]
 
-  grading:
-    - grade_identifier: null
+    grading:
+    -
+        grade_identifier: null
 
 groups:
- - id: intro
-   pages:
+-
+    id: intro
+    pages:
 
     -
         type: Page
