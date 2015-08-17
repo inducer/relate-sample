@@ -438,7 +438,7 @@ groups:
             - older
 
     -
-        type: MultipleTextQuestion
+        type: InlineMultiQuestion
         id: excelbasictry3
         value: 10
         prompt: |
