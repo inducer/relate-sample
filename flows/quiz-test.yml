@@ -437,6 +437,61 @@ groups:
             - 81-90 years
             - older
 
+    -
+        type: MultipleTextQuestion
+        id: excelbasictry3
+        value: 10
+        prompt: |
+
+            # An example
+
+            Complete the following paragraph.
+
+        question: |
+
+            Foo and [[blank1]] are often used in code examples, or
+            tutorials. The float weight of $\frac{1}{5}$ is [[blank_2]].
+
+            The correct answer for this choice question is [[choice_a]].
+            The Upper case of "foo" is [[choice2]]
+
+        answers:
+
+            blank1:
+                type: ShortAnswer
+                width: 4em
+                required: True
+                hint: Tex can be rendered in hint, e.g. $x_1$.
+                hint_title: Hint
+                correct_answer:
+                - <plain> BAR
+                - <plain>bar
+
+            blank_2:
+                type: ShortAnswer
+                width: 10em
+                hint: <ol><li>with no hint title</li><li>HTML is OK</li><ol>
+                correct_answer:
+                - <plain> "1/5"
+                - type: float
+                  value: 1/5
+                  rtol: 0.00001
+                - <plain> 0.2
+
+            choice_a:
+                type: ChoicesAnswer
+                required: True
+                choices:
+                - ~CORRECT~ Correct
+                - Wrong
+
+            choice2:
+                type: ChoicesAnswer
+                choices:
+                - ~CORRECT~ FOO
+                - BAR
+                - fOO
+
     # {{{ Custom page type implemented within this repository
 
     -
