@@ -459,7 +459,7 @@ groups:
 
             blank1:
                 type: ShortAnswer
-                width: 4em
+                width: 6em
                 required: True
                 hint: Tex can be rendered in hint, e.g. $x_1$.
                 hint_title: Hint
