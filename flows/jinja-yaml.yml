@@ -5,10 +5,8 @@ description: |
 
     Yadda yadda.
 
-[JINJA]
 {% from "macros.jinja" import grace_rules %}
 {{ grace_rules(1) }}
-[/JINJA]
 
 pages:
 
