@@ -12,33 +12,30 @@ rules:
     -
         grade_identifier: null
 
-groups:
+pages:
+
 -
+    type: Page
     id: intro
-    pages:
+    content: |
 
-    -
-        type: Page
-        id: intro
-        content: |
+        [JINJA]
 
-            [JINJA]
+        # A little distraction to start
 
-            # A little distraction to start
+        Yadda yadda.
 
-            Yadda yadda.
+        {% from "macros.jinja" import youtube %}
+        {{ youtube("QH2-TGUlwu4") }}
 
-            {% from "macros.jinja" import youtube %}
-            {{ youtube("QH2-TGUlwu4") }}
+-
+    type: Page
+    id: vectors
+    content: |
 
-    -
-        type: Page
-        id: vectors
-        content: |
+        # Vectors
 
-            # Vectors
-
-            A vector is pretty straight.
+        A vector is pretty straight.
 
 completion_text: |
 

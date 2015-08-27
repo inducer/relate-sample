@@ -10,42 +10,35 @@ description: |
 {{ grace_rules(1) }}
 [/JINJA]
 
-groups:
--
-    id: intro
-    pages:
-
-    -
-        type: Page
-        id: welcome
-        title: "Linear algebra quiz"
-        content: |
-
-            # Welcome to the linear algebra quiz!
-
-            Don't be scared.
+pages:
 
 -
-    id: quiz
-    pages:
+    type: Page
+    id: welcome
+    title: "Linear algebra quiz"
+    content: |
 
-    -
-        type: TextQuestion
-        id: eigvec
-        title: Eigenvectors
-        value: 2
-        prompt: |
+        # Welcome to the linear algebra quiz!
 
-            # What's an eigenvector?
+        Don't be scared.
 
-            Yadda ___________________ yadda.
+-
+    type: TextQuestion
+    id: eigvec
+    title: Eigenvectors
+    value: 2
+    prompt: |
 
-        answers:
+        # What's an eigenvector?
 
-        - <plain>matrix
-        - <case_sens_plain>Eigenmatrix
-        - <regex>(?:linear\s+)?\s*map
-        - <case_sens_regex>(?:operator\s+)?\s*map
+        Yadda ___________________ yadda.
+
+    answers:
+
+    - <plain>matrix
+    - <case_sens_plain>Eigenmatrix
+    - <regex>(?:linear\s+)?\s*map
+    - <case_sens_regex>(?:operator\s+)?\s*map
 
 
 completion_text: |

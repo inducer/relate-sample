@@ -35,34 +35,31 @@ rules:
         credit_percent: 100
 
 
-groups:
+pages:
+
 -
-    id: intro
-    pages:
+    type: Page
+    id: welcome
+    content: |
 
-    -
-        type: Page
-        id: welcome
-        content: |
+        # Welcome to the test exam for RELATE!
 
-            # Welcome to the test exam for RELATE!
+        Don't be scared.
 
-            Don't be scared.
+-
+    type: HumanGradedTextQuestion
+    id: hgtext
+    value: 5
+    widget: textarea
+    prompt: |
 
-    -
-        type: HumanGradedTextQuestion
-        id: hgtext
-        value: 5
-        widget: textarea
-        prompt: |
+        # Mark Twain
 
-            # Mark Twain
+        Discuss the literary work of Mark Twain.
 
-            Discuss the literary work of Mark Twain.
+    rubric: |
 
-        rubric: |
-
-            Has something interesting to say.
+        Has something interesting to say.
 
 completion_text: |
 
