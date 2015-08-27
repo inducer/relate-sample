@@ -19,8 +19,6 @@ pages:
     id: intro
     content: |
 
-        [JINJA]
-
         # A little distraction to start
 
         Yadda yadda.

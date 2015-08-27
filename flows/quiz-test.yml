@@ -361,8 +361,6 @@ groups:
 
         prompt: |
 
-            [JINJA]
-
             # Submit an exam question
 
             Submit your practice exam question in the box below.
