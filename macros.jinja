@@ -59,13 +59,13 @@ rules:
   grading:
     -
       if_completed_before: end_week {{ week }}
-      grade_identifier: la_quiz
+      grade_identifier: quiz_{{ week }}
       grade_aggregation_strategy: max_grade
       credit_percent: 100
 
     -
       if_completed_before: end_week {{ week + 1 }}
-      grade_identifier: la_quiz
+      grade_identifier: quiz_{{ week }}
       grade_aggregation_strategy: max_grade
       credit_percent: 50
 
