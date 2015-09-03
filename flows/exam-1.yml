@@ -23,7 +23,19 @@ rules:
     access:
     -
         if_in_facility: test_center
-        permissions: [view, submit_answer, end_session, see_correctness]
+        if_session_duration_shorter_than_minutes: 0.5
+        permissions: [view, submit_answer, end_session, see_session_time]
+
+    -
+        if_in_facility: test_center
+        message: "You exam will end soon."
+        if_session_duration_shorter_than_minutes: 1
+        permissions: [view, submit_answer, end_session, see_session_time]
+
+    -
+        if_in_facility: test_center
+        message: "You exam has ended. You may no longer make changes. Please click 'End Session' to finish."
+        permissions: [view, end_session, see_correctness, see_session_time]
 
     -
         permissions: []
