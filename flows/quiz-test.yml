@@ -216,6 +216,7 @@ groups:
 
             a = random.uniform(-10, 10)
             b = random.uniform(-10, 10)
+            1/0
 
         names_for_user: [a, b]
 
