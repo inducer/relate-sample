@@ -40,10 +40,11 @@ rules:
     -
         permissions: []
 
+    grade_identifier: exam_1
+    grade_aggregation_strategy: max_grade
+
     grading:
     -
-        grade_identifier: exam_1
-        grade_aggregation_strategy: max_grade
         credit_percent: 100
 
 
