@@ -10,9 +10,6 @@ rules:
 
     grade_identifier: null
 
-    grading:
-    -   generates_grade: false
-
 pages:
 
 -
