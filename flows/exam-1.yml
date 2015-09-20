@@ -7,7 +7,7 @@ rules:
     start:
     -
         if_has_fewer_sessions_than: 1
-        if_in_facility: test_center
+        if_in_facility: test_centerzzz
         may_start_new_session: True
         may_list_existing_sessions: True
 
