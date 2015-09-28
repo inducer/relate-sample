@@ -26,7 +26,6 @@ rules:
 
     grading:
     -
-        if_completed_before: end_week 1
         credit_percent: 100
 
 groups:
