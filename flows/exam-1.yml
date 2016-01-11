@@ -10,11 +10,13 @@ rules:
         if_in_facility: test_center
         may_start_new_session: True
         may_list_existing_sessions: True
+        lock_down_as_exam_session: True
 
     -
         if_in_facility: test_center
         may_start_new_session: False
         may_list_existing_sessions: True
+        lock_down_as_exam_session: True
 
     -
         may_start_new_session: False
