@@ -36,8 +36,13 @@ rules:
 
     -
         if_in_facility: test_center
+        if_in_progess: True
         message: "You exam has ended. You may no longer make changes. Please click 'End Session' to finish."
         permissions: [view, end_session, see_correctness, see_session_time]
+
+    -
+        if_in_facility: test_center
+        permissions: [view, see_correctness, see_session_time]
 
     -
         permissions: []
