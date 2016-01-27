@@ -243,6 +243,7 @@ groups:
             Your code will receive two variables, *a* and *b*. Compute their product and
             assign it to *c*.
 
+        show_setup_code: True
         setup_code: |
             import random
 
@@ -259,6 +260,7 @@ groups:
 
         names_from_user: [c]
 
+        show_test_code: True
         test_code: |
             if not isinstance(c, float):
                 feedback.finish(0, "Your computed c is not a float.")
