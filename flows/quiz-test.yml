@@ -190,7 +190,7 @@ groups:
             add_permissions:
                 - change_answer
         value: 1
-        timeout: 0.5
+        timeout: 10
         prompt: |
 
             # Adding two numbers in Python
@@ -232,7 +232,7 @@ groups:
                 - change_answer
         value: 3
         human_feedback_value: 2
-        timeout: 0.5
+        timeout: 10
         data_files:
             - "question-data/random-data.npy"
 
