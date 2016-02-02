@@ -6,12 +6,14 @@ description: |
 rules:
     start:
     -
+        if_has_role: [instructor, teaching_assistant, student]
         if_has_fewer_sessions_than: 1
         if_in_facility: test_center
         may_start_new_session: True
         may_list_existing_sessions: True
 
     -
+        if_has_role: [instructor, teaching_assistant, student]
         if_in_facility: test_center
         may_start_new_session: False
         may_list_existing_sessions: True
@@ -21,6 +23,10 @@ rules:
         may_list_existing_sessions: False
 
     access:
+    -
+        if_has_role: [unenrolled]
+        permissions: []
+
     -
         if_in_facility: test_center
         if_session_duration_shorter_than_minutes: 0.5
