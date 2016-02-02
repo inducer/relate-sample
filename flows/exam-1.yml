@@ -35,7 +35,7 @@ rules:
     -
         if_in_facility: test_center
         if_in_progress: True
-        message: "You exam has ended. You may no longer make changes. Please click 'End Session' to finish."
+        message: "You exam has ended. You may no longer make changes. Please click 'Submit assignment' to finish."
         permissions: [view, end_session, see_correctness, see_session_time, lock_down_as_exam_session]
 
     -
