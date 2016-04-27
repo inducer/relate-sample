@@ -145,6 +145,7 @@ groups:
     -
         type: MultipleChoiceQuestion
         id: ice_cream_toppings
+        credit_mode: exact
         value: 1
         shuffle: True
         prompt: |
@@ -166,7 +167,7 @@ groups:
         id: matrix_props
         value: 1
         shuffle: True
-        allow_partial_credit: True
+        credit_mode: proportional
         prompt: |
 
             # Matrix properties
