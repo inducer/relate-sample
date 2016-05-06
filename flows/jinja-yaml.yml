@@ -51,7 +51,7 @@ pages:
         [TEXexample.net](http://www.texample.net/tikz/examples/complete-graph/)
         
         <p align='middle' >
-        {% call latex(image_format="png", is_full_code=True) %}
+        {% call latex(image_format="png") %}
             % Author: Quintin Jean-Noël
             % <http://moais.imag.fr/membres/jean-noel.quintin/>
             \documentclass{article}
@@ -106,7 +106,7 @@ pages:
         {% endcall %}
         </p>
         
-        Hints: You can use Jinja ``set`` block to set variable ``foo``, then use ``foo`` as (k)argument for the ``latex`` macro.
+        Hints: You can use Jinja ``set`` block to set variable ``foo``, then use ``foo`` as (key) argument for the ``latex`` macro.
 
         
 
