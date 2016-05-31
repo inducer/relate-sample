@@ -46,12 +46,11 @@ pages:
     prompt: |
 
         # Choice 
-        
+
         What format is the following image? From 
         [TEXexample.net](http://www.texample.net/tikz/examples/complete-graph/)
-        
-        <p align='middle' >
-        {% call latex(image_format="png") %}
+
+        {% set preamble %}
             % Author: Quintin Jean-Noël
             % <http://moais.imag.fr/membres/jean-noel.quintin/>
             \documentclass{article}
@@ -74,6 +73,11 @@ pages:
             % A counter, since TikZ is not clever enough (yet) to handle
             % arbitrary angle systems.
             \newcount\mycount
+        {% endset %}
+
+        <p align='middle' >
+        {% call latex(compiler="latex", tex_preamble=preamble, image_format="png") %}
+
             \begin{document}
             \begin{tikzpicture}[transform shape]
               %the multiplication with floats is not possible. Thus I split the loop in two.
@@ -105,10 +109,8 @@ pages:
             \end{document}
         {% endcall %}
         </p>
-        
-        Hints: You can use Jinja ``set`` block to set variable ``foo``, then use ``foo`` as (key) argument for the ``latex`` macro.
 
-        
+        Hints: You can use Jinja ``set`` block to set variable ``foo``, then use ``foo`` as keyword argument for the ``latex`` macro.
 
     choices:
           - png
