@@ -521,9 +521,10 @@ groups:
             sample_rate = 44100
 
             def output_audio(data):
-                data = data.astype(np.float32)
+                data = np.asarray(data)
                 if np.max(data) > 1.1 or np.min(data) < -1.1:
                     raise ValueError("sound sample values must lie between 0 and 1")
+                data = (data * np.iinfo(np.int16).max).astype(np.int16)
 
                 from scipy.io import wavfile
                 from io import BytesIO
