@@ -44,7 +44,7 @@ groups:
 
 -
     id: quiz_start
-    shuffle: True
+    shuffle: False
     pages:
 
     -
