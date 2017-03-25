@@ -49,6 +49,179 @@ groups:
 
     -
         type: TextQuestion
+        id: half
+        value: 5
+        prompt: |
+
+          # A half
+
+          What's a half?
+
+        answers:
+
+          - type: float
+            value: 0.5
+            rtol: 1e-4
+          - <plain>half
+          - <plain>a half
+
+    -
+        type: ChoiceQuestion
+        id: krylov
+        value: 2
+        prompt: |
+
+            # Krylov-space methods
+
+            What form of a matrix is produced by Arnoldi iteration?
+
+        choices:
+
+          - ~CORRECT~ Upper Hessenberg form
+          - Diagonal
+          - Schur form
+          - Tridiagonal form
+
+    -
+        type: MultipleChoiceQuestion
+        id: ice_cream_toppings
+        credit_mode: exact
+        value: 1
+        shuffle: False
+        prompt: |
+
+            # Ice Cream Toppings
+
+            Which of the following are ice cream toppings?
+
+        choices:
+
+          - ~CORRECT~ Sprinkles
+          - ~CORRECT~ Chocolate chunks
+          - Vacuum cleaner dust
+          - Spider webs
+          - ~CORRECT~ Almond bits
+
+    -
+        type: MultipleChoiceQuestion
+        id: matrix_props
+        value: 1
+        shuffle: False
+        credit_mode: proportional
+        prompt: |
+
+            # Matrix properties
+
+            You know that the matrix $A$ satisfies $A=A^T$.
+
+            Which of the following is true about $A$?
+
+        choices:
+
+          - ~CORRECT~ $A$ has real eigenvalues.
+          - $A$ has eigenvalues with positive real part.
+          - $(x,y) = x^TAy$ is an inner product.
+          - ~CORRECT~ $A$ has orthogonal eigenvectors.
+          - $AA^T=I$
+
+    -
+        type: InlineMultiQuestion
+        id: inlinemulti
+        value: 10
+        prompt: |
+
+            # An InlineMultiQuestion example
+
+            Complete the following paragraph.
+
+        question: |
+
+            Foo and [[blank1]] are often used in code examples, or
+            tutorials. $\frac{1}{5}$ is equivalent to [[blank_2]].
+
+            The correct answer for this choice question is [[choice_a]].
+            The Upper case of "foo" is [[choice2]].
+
+            One dollar is [[blank3]], and five percent is [[blank4]], and "Bar"
+            wrapped by a pair of parentheses is [[blank5]].
+
+        answers:
+
+            blank1:
+                type: ShortAnswer
+                width: 4em
+                required: True
+                hint: Tex can be rendered in hint, e.g. $x_1$.
+                hint_title: Hint
+                correct_answer:
+                - <plain> BAR
+                - <plain>bar
+
+            blank_2:
+                type: ShortAnswer
+                width: 10em
+                hint: <ol><li>with no hint title</li><li>HTML is OK</li><ol>
+                correct_answer:
+                - <plain> "1/5"
+                - type: float
+                  value: 1/5
+                  rtol: 0.00001
+                - <plain> 0.2
+
+            choice_a:
+                type: ChoicesAnswer
+                required: True
+                choices:
+                - ~CORRECT~ Correct
+                - Wrong
+
+            choice2:
+                type: ChoicesAnswer
+                choices:
+                - ~CORRECT~ FOO
+                - BAR
+                - fOO
+
+            blank3:
+                type: ShortAnswer
+                width: 3em
+                prepended_text: "$"
+                hint: Blank with prepended text
+                correct_answer:
+                - type: float
+                  value: 1
+                  rtol: 0.00001
+                - <plain> "1"
+
+            blank4:
+                type: ShortAnswer
+                width: 3em
+                appended_text: "%"
+                hint: Blank with appended text
+                correct_answer:
+                - type: float
+                  value: 5
+                  rtol: 0.00001
+                - <plain> "5"
+
+            blank5:
+                type: ShortAnswer
+                width: 6em
+                prepended_text: "("
+                appended_text: ")"
+                required: True
+                hint: Blank with both prepended and appended text
+                correct_answer:
+                - <plain> BAR
+                - <plain>bar
+
+-
+    id: quiz_tail
+    shuffle: True
+    pages:
+
+    -
+        type: TextQuestion
         id: eigvec
         value: 2
         prompt: |
@@ -79,33 +252,10 @@ groups:
           - <sym_expr>1/(1-A)
 
     -
-        type: TextQuestion
-        id: half
-        value: 5
-        prompt: |
-
-          # A half
-
-          What's a half?
-
-        answers:
-
-          - type: float
-            value: 0.5
-            rtol: 1e-4
-          - <plain>half
-          - <plain>a half
-
--
-    id: quiz_tail
-    shuffle: True
-    pages:
-
-    -
         type: ChoiceQuestion
         id: lsq
         value: 1
-        shuffle: True
+        shuffle: False
         prompt: |
 
             # Least squares problems
@@ -124,65 +274,6 @@ groups:
           - This is a really long option, but *certainly* not the correct one.
 
             Instead, it tests whether Markdown works in choice questions.
-
-    -
-        type: ChoiceQuestion
-        id: krylov
-        value: 2
-        prompt: |
-
-            # Krylov-space methods
-
-            What form of a matrix is produced by Arnoldi iteration?
-
-        choices:
-
-          - ~CORRECT~ Upper Hessenberg form
-          - Diagonal
-          - Schur form
-          - Tridiagonal form
-
-    -
-        type: MultipleChoiceQuestion
-        id: ice_cream_toppings
-        credit_mode: exact
-        value: 1
-        shuffle: True
-        prompt: |
-
-            # Ice Cream Toppings
-
-            Which of the following are ice cream toppings?
-
-        choices:
-
-          - ~CORRECT~ Sprinkles
-          - ~CORRECT~ Chocolate chunks
-          - Vacuum cleaner dust
-          - Spider webs
-          - ~CORRECT~ Almond bits
-
-    -
-        type: MultipleChoiceQuestion
-        id: matrix_props
-        value: 1
-        shuffle: True
-        credit_mode: proportional
-        prompt: |
-
-            # Matrix properties
-
-            You know that the matrix $A$ satisfies $A=A^T$.
-
-            Which of the following is true about $A$?
-
-        choices:
-
-          - ~CORRECT~ $A$ has real eigenvalues.
-          - $A$ has eigenvalues with positive real part.
-          - $(x,y) = x^TAy$ is an inner product.
-          - ~CORRECT~ $A$ has orthogonal eigenvectors.
-          - $AA^T=I$
 
     -
         type: PythonCodeQuestion
@@ -439,97 +530,6 @@ groups:
             - 71-80 years
             - 81-90 years
             - older
-
-    -
-        type: InlineMultiQuestion
-        id: inlinemulti
-        value: 10
-        prompt: |
-
-            # An InlineMultiQuestion example
-
-            Complete the following paragraph.
-
-        question: |
-
-            Foo and [[blank1]] are often used in code examples, or
-            tutorials. $\frac{1}{5}$ is equivalent to [[blank_2]].
-
-            The correct answer for this choice question is [[choice_a]].
-            The Upper case of "foo" is [[choice2]].
-
-            One dollar is [[blank3]], and five percent is [[blank4]], and "Bar"
-            wrapped by a pair of parentheses is [[blank5]].
-
-        answers:
-
-            blank1:
-                type: ShortAnswer
-                width: 4em
-                required: True
-                hint: Tex can be rendered in hint, e.g. $x_1$.
-                hint_title: Hint
-                correct_answer:
-                - <plain> BAR
-                - <plain>bar
-
-            blank_2:
-                type: ShortAnswer
-                width: 10em
-                hint: <ol><li>with no hint title</li><li>HTML is OK</li><ol>
-                correct_answer:
-                - <plain> "1/5"
-                - type: float
-                  value: 1/5
-                  rtol: 0.00001
-                - <plain> 0.2
-
-            choice_a:
-                type: ChoicesAnswer
-                required: True
-                choices:
-                - ~CORRECT~ Correct
-                - Wrong
-
-            choice2:
-                type: ChoicesAnswer
-                choices:
-                - ~CORRECT~ FOO
-                - BAR
-                - fOO
-
-            blank3:
-                type: ShortAnswer
-                width: 3em
-                prepended_text: "$"
-                hint: Blank with prepended text
-                correct_answer:
-                - type: float
-                  value: 1
-                  rtol: 0.00001
-                - <plain> "1"
-
-            blank4:
-                type: ShortAnswer
-                width: 3em
-                appended_text: "%"
-                hint: Blank with appended text
-                correct_answer:
-                - type: float
-                  value: 5
-                  rtol: 0.00001
-                - <plain> "5"
-
-            blank5:
-                type: ShortAnswer
-                width: 6em
-                prepended_text: "("
-                appended_text: ")"
-                required: True
-                hint: Blank with both prepended and appended text
-                correct_answer:
-                - <plain> BAR
-                - <plain>bar
 
     -
         type: PythonCodeQuestion
