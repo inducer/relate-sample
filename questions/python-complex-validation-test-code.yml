@@ -3,8 +3,8 @@ id: py_simple_list
 access_rules:
     add_permissions:
         - change_answer
-value: 3
-human_feedback_percentage: 33.33333
+value: 4
+human_feedback_percentage: 25
 timeout: 10
 
 prompt: |
