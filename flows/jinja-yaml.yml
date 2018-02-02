@@ -5,7 +5,7 @@ description: |
 
     Yadda yadda.
 
-{% from "macros.jinja" import grace_rules %}
+{% from "yaml-macros.yml" import grace_rules %}
 {{ grace_rules(1) }}
 
 pages:

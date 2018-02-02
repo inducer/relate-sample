@@ -21,7 +21,7 @@ pages:
 
         Yadda yadda.
 
-        {% from "macros.jinja" import youtube %}
+        {% from "content-macros.jinja" import youtube %}
         {{ youtube("QH2-TGUlwu4") }}
 
 -

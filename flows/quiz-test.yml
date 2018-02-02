@@ -1,4 +1,19 @@
+# This is a YAML comment, which is entirely ignored.
+
+# YAML files in Relate are preprocessed with Jinja2.
+# See http://jinja.pocoo.org/docs/latest/templates/ for syntax.
+
+# This brings in a helper function that is used to include pages from
+# separate files. This is optional, but conceivably useful.
+{% from "yaml-macros.yml" import indented_include %}
+
 title: "RELATE Test Quiz"
+
+# The "|" character introduces a 'block literal', which means all text indented below
+# it is taken literally. The description property holds text marked up with 'Markdown'.
+# See https://documen.tician.de/relate/content.html#relate-markup for more.
+#
+# So the '#' character below introduces a first-level headline (not a comment).
 description: |
 
     # RELATE Test Quiz
@@ -47,6 +62,8 @@ groups:
     shuffle: False
     pages:
 
+    # Pages can be given in-line (like this one) or brought in by including
+    # them from other files, as below.
     -
         type: TextQuestion
         id: half
@@ -66,21 +83,7 @@ groups:
           - <plain>a half
 
     -
-        type: ChoiceQuestion
-        id: krylov
-        value: 2
-        prompt: |
-
-            # Krylov-space methods
-
-            What form of a matrix is produced by Arnoldi iteration?
-
-        choices:
-
-          - ~CORRECT~ Upper Hessenberg form
-          - Diagonal
-          - Schur form
-          - Tridiagonal form
+        {{ indented_include("questions/krylov.yml", 8) }}
 
     -
         type: MultipleChoiceQuestion
@@ -103,117 +106,10 @@ groups:
           - ~CORRECT~ Almond bits
 
     -
-        type: MultipleChoiceQuestion
-        id: matrix_props
-        value: 1
-        shuffle: False
-        credit_mode: proportional
-        prompt: |
-
-            # Matrix properties
-
-            You know that the matrix $A$ satisfies $A=A^T$.
-
-            Which of the following is true about $A$?
-
-        choices:
-
-          - ~CORRECT~ $A$ has real eigenvalues.
-          - $A$ has eigenvalues with positive real part.
-          - $(x,y) = x^TAy$ is an inner product.
-          - ~CORRECT~ $A$ has orthogonal eigenvectors.
-          - $AA^T=I$
+        {{ indented_include("questions/matrix-properties.yml", 8) }}
 
     -
-        type: InlineMultiQuestion
-        id: inlinemulti
-        value: 10
-        prompt: |
-
-            # An InlineMultiQuestion example
-
-            Complete the following paragraph.
-
-        question: |
-
-            Foo and [[blank1]] are often used in code examples, or
-            tutorials. $\frac{1}{5}$ is equivalent to [[blank_2]].
-
-            The correct answer for this choice question is [[choice_a]].
-            The Upper case of "foo" is [[choice2]].
-
-            One dollar is [[blank3]], and five percent is [[blank4]], and "Bar"
-            wrapped by a pair of parentheses is [[blank5]].
-
-        answers:
-
-            blank1:
-                type: ShortAnswer
-                width: 4em
-                required: True
-                hint: Tex can be rendered in hint, e.g. $x_1$.
-                hint_title: Hint
-                correct_answer:
-                - <plain> BAR
-                - <plain>bar
-
-            blank_2:
-                type: ShortAnswer
-                width: 10em
-                hint: <ol><li>with no hint title</li><li>HTML is OK</li><ol>
-                correct_answer:
-                - <plain> "1/5"
-                - type: float
-                  value: 1/5
-                  rtol: 0.00001
-                - <plain> 0.2
-
-            choice_a:
-                type: ChoicesAnswer
-                required: True
-                choices:
-                - ~CORRECT~ Correct
-                - Wrong
-
-            choice2:
-                type: ChoicesAnswer
-                choices:
-                - ~CORRECT~ FOO
-                - BAR
-                - fOO
-
-            blank3:
-                type: ShortAnswer
-                width: 3em
-                prepended_text: "$"
-                hint: Blank with prepended text
-                correct_answer:
-                - type: float
-                  value: 1
-                  rtol: 0.00001
-                - <plain> "1"
-
-            blank4:
-                type: ShortAnswer
-                width: 3em
-                appended_text: "%"
-                hint: Blank with appended text
-                correct_answer:
-                - type: float
-                  value: 5
-                  rtol: 0.00001
-                - <plain> "5"
-
-            blank5:
-                type: ShortAnswer
-                width: 6em
-                prepended_text: "("
-                appended_text: ")"
-                required: True
-                hint: Blank with both prepended and appended text
-                correct_answer:
-                - <plain> BAR
-                - <plain>bar
+        {{ indented_include("questions/multi-question-example.yml", 8) }}
 
     -
         type: SurveyTextQuestion
@@ -226,26 +122,7 @@ groups:
             What's your biggest fear?
 
     -
-        type: SurveyChoiceQuestion
-        id: age_group
-        prompt: |
-
-            # Age
-
-            How old are you?
-
-        choices:
-
-            - 0-10 years
-            - 11-20 years
-            - 21-30 years
-            - 31-40 years
-            - 41-50 years
-            - 51-60 years
-            - 61-70 years
-            - 71-80 years
-            - 81-90 years
-            - older
+        {{ indented_include("questions/survey-age-question.yml", 8) }}
 
 -
     id: quiz_tail
@@ -253,427 +130,29 @@ groups:
     pages:
 
     -
-        type: TextQuestion
-        id: eigvec
-        value: 2
-        prompt: |
-
-            # What's an eigenvector?
-
-            Yadda ___________________ yadda.
-
-        answers:
-
-          - <plain>matrix
-          - <case_sens_plain>Eigenmatrix
-          - <regex>(?:linear\s+)?\s*map
-          - <case_sens_regex>(?:operator\s+)?\s*map
-
+        {{ indented_include("questions/complex-text-match-example.yml", 8) }}
     -
-        type: TextQuestion
-        id: neumann
-        value: 5
-        prompt: |
-
-          # Neumann series
-
-          What's $\operatorname{Id} + A + A^2 +A^3+\cdots$?
-
-        answers:
-
-          - <sym_expr>1/(1-A)
-
+        {{ indented_include("questions/symbolic-expression-example.yml", 8) }}
     -
-        type: ChoiceQuestion
-        id: lsq
-        value: 1
-        shuffle: False
-        prompt: |
-
-            # Least squares problems
-
-            Let $m\ge n$ and $\boldsymbol A$ be an $m\times n$ matrix. Which of the
-            following conditions suffices to guarantee that
-            the least squares system $\boldsymbol A \boldsymbol x\cong \boldsymbol b$
-            has a *unique* solution?
-
-        choices:
-
-          - Always
-          - When $\operatorname{rank}(\boldsymbol A)=m$
-          - ~CORRECT~ When $\operatorname{rank}(\boldsymbol A)=n$
-          - When $\boldsymbol b$ lies in $\operatorname{span}(\boldsymbol A)$
-          - This is a really long option, but *certainly* not the correct one.
-
-            Instead, it tests whether Markdown works in choice questions.
-
+        {{ indented_include("questions/long-choice-least-squares.yml", 8) }}
     -
-        type: PythonCodeQuestion
-        id: addition
-        access_rules:
-            add_permissions:
-                - change_answer
-        value: 1
-        timeout: 10
-        prompt: |
-
-            # Adding two numbers in Python
-
-            Your code will receive two variables, *a* and *b*. Compute their sum and
-            assign it to *c*.
-
-        setup_code: |
-            import random
-
-            a = random.uniform(-10, 10)
-            b = random.uniform(-10, 10)
-
-        names_for_user: [a, b]
-
-        names_from_user: [c]
-
-        test_code: |
-            if not isinstance(c, float):
-                feedback.finish(0, "Your computed c is not a float.")
-
-            correct_c = a + b
-            rel_err = abs(correct_c-c)/abs(correct_c)
-
-            if rel_err < 1e-7:
-                feedback.finish(1, "Your computed c was correct.")
-            else:
-                feedback.finish(0, "Your computed c was incorrect.")
-
-        correct_code: |
-
-            c = a + b
-
+        {{ indented_include("questions/autograded-python-example.yml", 8) }}
     -
-        type: PythonCodeQuestionWithHumanTextFeedback
-        id: pymult
-        access_rules:
-            add_permissions:
-                - change_answer
-        value: 3
-        human_feedback_value: 2
-        timeout: 10
-        data_files:
-            - "question-data/random-data.npy"
-
-        prompt: |
-
-            # Multiplying two numbers in Python
-
-            Your code will receive two variables, *a* and *b*. Compute their product and
-            assign it to *c*.
-
-        show_setup_code: True
-        setup_code: |
-            import random
-
-            a = random.uniform(-10, 10)
-            b = random.uniform(-10, 10)
-
-            from io import BytesIO
-            bio = BytesIO(data_files["question-data/random-data.npy"])
-
-            import numpy as np
-            data = np.load(bio)
-
-        names_for_user: [a, b, data]
-
-        names_from_user: [c]
-
-        show_test_code: True
-        test_code: |
-            correct_c = a * b
-
-            # Note: This won't return a points feedback. You need to
-            # to add points by feedback.add_points or feedback.finish
-            feedback.check_scalar("c", correct_c, c)
-
-        correct_code: |
-
-            c = a * b
-
-        rubric: |
-
-            The code has to be squeaky-clean.
-
-        initial_code: |
-
-            # Assign the product value to c.
-            c = ...
-
+        {{ indented_include("questions/auto-and-human-graded-python-example.yml", 8) }}
     -
-        type: FileUploadQuestion
-        id: proof
-        access_rules:
-            add_permissions:
-                - change_answer
-        value: 5
-        maximum_megabytes: 0.5
-        prompt: |
-
-            # Pythagorean theorem
-
-            Prove that $$\|a\|^2 +\|b\|^2=\|a + b\|^2$$ if $a\cdot b$ = 0.
-
-            In the file upload box below, provide a PDF with your writeup.
-
-        mime_types:
-
-            - application/pdf
-
-        rubric: |
-
-            A full-credit solution needs to:
-
-            * Use the inner product to make the argument (30%)
-            * Be readable (30%)
-            * Argue correctly (30%)
-            * Contain no formal mistakes (10%)
-
+        {{ indented_include("questions/pdf-file-upload-example.yml", 8) }}
     -
-        type: FileUploadQuestion
-        id: anyup
-        access_rules:
-            add_permissions:
-                - change_answer
-        value: 5
-        maximum_megabytes: 0.5
-        prompt: |
-
-            # Upload your favorite file
-
-            Upload anything you like below.
-
-        mime_types:
-
-            - application/octet-stream
-
-        rubric: |
-
-            Have they uploaded a file?
-
+        {{ indented_include("questions/any-file-upload-example.yml", 8) }}
     -
-        type: HumanGradedTextQuestion
-        id: hgtext
-        value: 5
-        widget: "editor:yaml"
-        validators:
-
-            -
-                type: relate_page
-                page_type: ChoiceQuestion
-
-        prompt: |
-
-            # Submit an exam question
-
-            Submit your practice exam question in the box below.
-
-            {% from "macros.jinja" import collapsible %}
-            {% call collapsible("Instructions", id="instr") %}
-
-            Use this pattern as a starting point:
-            ```
-            type: ChoiceQuestion
-            id: myquestion
-            shuffle: True
-            prompt: |
-
-                # What is your favorite number?
-
-                There are many beautiful numbers. What's your
-                favorite one?
-
-            choices:
-
-              - "1"
-              - "2"
-              - ~CORRECT~ 15
-              - ~CORRECT~ $\pi$
-              - $\sqrt 2$
-            ```
-
-            A few comments on how the questions are written:
-
-            * You just need to change the `prompt` and the `choices`.
-              Leave everything else as it is.
-            * If you like, you can assign an `id`. This field must be all
-              lower-case alphanumeric, no spaces. Underscores `_` are allowed.
-            * Bare numbers as answer choices must be enclosed in quotes.
-            * Mark the correct answer with a `~CORRECT~` tag.
-            * Everything is formatted using [Markdown](https://guides.github.com/features/mastering-markdown/).
-              You may use LaTeX math, enclosed in `$...$` for in-line math and
-              `$$...$$` for display math.
-            * Make sure to keep the indentation in place, otherwise the question
-              won't be accepted by RELATE.
-            * If you'd like to see what your question will look like, you can play with it
-              [here](../../../sandbox/page/).
-
-            You will receive the extra credit for your submitted question if we
-            determine that you have done an 'honest job' trying to create a
-            good exam question--basically if we can tell that you've put some
-            work into your question.  For example, just copying and pasting a
-            quiz question and changing the numbers slightly does not count. You
-            can look for inspiration in the quizzes, though. Other sources of
-            inspiration include the notes, the textbook and the
-            demos--basically any fact that we've learned can be turned into a
-            good question. Try to avoid True/False questions--those are very
-            easy to guess and therefore not often good. Try to come up with
-            good, confusing, plausible-sounding (but wrong) alternatives.
-
-            {% endcall %}
-
-            Please try to emphasize the part of the class that will be on the
-            second midterm--that is to say, everything from orthogonality onward.
-
-        rubric: |
-
-            (None yet)
-
+        {{ indented_include("questions/human-graded-text-example.yml", 8) }}
     -
-        type: PythonCodeQuestion
-        id: test_audio_output
-        access_rules:
-            add_permissions:
-            -  change_answer
-        timeout: 5
-        prompt: |
-
-            # Audio
-
-        setup_code: |
-
-            import numpy as np
-
-            sample_rate = 44100
-
-            def output_audio(data):
-                data = np.asarray(data)
-                if np.max(data) > 1.1 or np.min(data) < -1.1:
-                    raise ValueError("sound sample values must lie between 0 and 1")
-                data = (data * np.iinfo(np.int16).max).astype(np.int16)
-
-                from scipy.io import wavfile
-                from io import BytesIO
-                bio = BytesIO()
-                wavfile.write(bio, sample_rate, data)
-
-                val = bio.getvalue()
-
-                import base64
-
-                output_html("""
-                    <audio controls>
-                      <source
-                        src="data:audio/wav;base64,{base64}" type="audio/wav" />
-                      Your browser does not support the audio element.
-                    </audio>
-                    """.format(base64=base64.encodebytes(val).decode()))
-
-        names_for_user: [sample_rate, output_audio]
-        initial_code: |
-
-            import numpy as np
-            t = np.linspace(0, 1, sample_rate, endpoint=False)
-            signal = np.sin(2*np.pi*t * 440)
-
-            output_audio(signal)
-
+        {{ indented_include("questions/audio-output-example.yml", 8) }}
     -
-        type: PythonCodeQuestionWithHumanTextFeedback
-        id: py_simple_list
-        access_rules:
-            add_permissions:
-                - change_answer
-        value: 3
-        human_feedback_value: 1
-        timeout: 10
-
-        prompt: |
-
-            # Making a list
-
-            Your code will receive one variables *a*. Return a list named *b* which
-            contains 50 *a*s.
-
-        show_setup_code: False
-        setup_code: |
-            import random
-
-            a = random.uniform(-10, 10)
-
-        names_for_user: [a]
-
-        names_from_user: [b]
-
-        show_test_code: False
-        test_code: |
-            if not isinstance(b, list):
-                feedback.finish(0, "b should be a list.")
-
-            if not len(b) == 50:
-                feedback.finish(0, "The length of b is not correct.")
-
-            if not len(set(b)) == 1:
-                feedback.finish(0, "The elements in b should be the same.")
-
-            if not b[0] == a:
-                feedback.finish(0.3, "The elements in b have wrong values.")
-
-            feedback.finish(1, "b looks good.")
-
-        correct_code: |
-            b = [a] * 50
-
-        rubric: |
-
-            The code has to be squeaky-clean.
-
-        initial_code: |
-
-            # Create a list containing 50 a.
-            b = ...
-
+        {{ indented_include("questions/python-complex-validation-test-code.yml", 8) }}
     -
-        type: TextQuestion
-        id: quarter
-        is_optional_page: True
-        prompt: |
-
-          # What is a quarter?
-
-        answers:
-
-          - type: float
-            value: 0.25
-            rtol: 1e-4
-          - <plain>1/4
-          - <plain>a quarter
-          - <plain>四分之一
-
-    # {{{ Custom page type implemented within this repository
-
+        {{ indented_include("questions/non-ascii-choices.yml", 8) }}
     -
-        type: repo:simple_questions.MyTextQuestion
-        id: eigval
-        # This title remains required because MyTextQuestion needs it.
-        title: "Eigenvalues"
-        prompt: |
-
-            # Eigenvalues
-
-            What's an eigenvalue?
-
-        answers:
-
-          - scalar
-          - number
-
-    # }}}
+        {{ indented_include("questions/custom-page-type.yml", 8) }}
 
 
 completion_text: |
