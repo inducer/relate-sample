@@ -151,9 +151,6 @@ groups:
         {{ indented_include("questions/python-complex-validation-test-code.yml", 8) }}
     -
         {{ indented_include("questions/non-ascii-choices.yml", 8) }}
-    -
-        {{ indented_include("questions/custom-page-type.yml", 8) }}
-
 
 completion_text: |
 
