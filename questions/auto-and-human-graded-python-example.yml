@@ -40,6 +40,7 @@ test_code: |
     # Note: This won't return a points feedback. You need to
     # to add points by feedback.add_points or feedback.finish
     feedback.check_scalar("c", correct_c, c)
+    feedback.finish(1, "Nicely done!")
 
 correct_code: |
 
