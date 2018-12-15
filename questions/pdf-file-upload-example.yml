@@ -1,0 +1,29 @@
+type: FileUploadQuestion
+id: proof
+access_rules:
+    add_permissions:
+        - change_answer
+value: 5
+maximum_megabytes: 0.5
+prompt: |
+
+    # Pythagorean theorem
+
+    Prove that $$\|a\|^2 +\|b\|^2=\|a + b\|^2$$ if $a\cdot b$ = 0.
+
+    In the file upload box below, provide a PDF with your writeup.
+
+mime_types:
+
+    - application/pdf
+
+rubric: |
+
+    A full-credit solution needs to:
+
+    * Use the inner product to make the argument (30%)
+    * Be readable (30%)
+    * Argue correctly (30%)
+    * Contain no formal mistakes (10%)
+
+
