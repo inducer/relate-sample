@@ -6,7 +6,7 @@ rules:
     access:
     -
         if_has_role: [student, ta, instructor]
-        permissions: [view]
+        permissions: [view,end_session]
 
     grade_identifier: null
 
@@ -21,8 +21,9 @@ pages:
     title: "Applying a Function in Octave"
     access_rules:
         add_permissions:
-            - see_correctness
+            - submit_answer
             - change_answer
+            - see_correctness
 
     prompt: |
         ### Applying a Function in Octave
@@ -82,8 +83,9 @@ pages:
     title: "Applying a Function in Python"
     access_rules:
         add_permissions:
-            - see_correctness
+            - submit_answer
             - change_answer
+            - see_correctness
 
     prompt: |
         ### Applying a Function in Python
