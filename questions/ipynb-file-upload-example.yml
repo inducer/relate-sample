@@ -1,0 +1,14 @@
+type: JupyterNotebookUploadQuestion
+id: jupyter_upload
+access_rules:
+    add_permissions:
+        - change_answer
+value: 5
+maximum_megabytes: 0.5
+prompt: |
+
+    # Upload your favorite JupterNotebook file
+
+rubric: |
+
+    Have they uploaded an .ipynb file?

@@ -144,6 +144,8 @@ groups:
     -
         {{ indented_include("questions/any-file-upload-example.yml", 8) }}
     -
+        {{ indented_include("questions/ipynb-file-upload-example.yml", 8) }}
+    -
         {{ indented_include("questions/human-graded-text-example.yml", 8) }}
     -
         {{ indented_include("questions/audio-output-example.yml", 8) }}
