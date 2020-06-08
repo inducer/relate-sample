@@ -20,6 +20,10 @@ setup_code: |
 
 names_for_user: [a, b]
 
+correct_code: |
+
+    c = a + b
+
 names_from_user: [c]
 
 test_code: |
@@ -33,8 +37,4 @@ test_code: |
         feedback.finish(1, "Your computed c was correct.")
     else:
         feedback.finish(0, "Your computed c was incorrect.")
-
-correct_code: |
-
-    c = a + b
 
