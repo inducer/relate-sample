@@ -19,7 +19,7 @@ pages:
 
         # A little distraction to start
 
-        Yadda yadda.
+        Пример видео с ютуб
 
         {% from "content-macros.jinja" import youtube %}
         {{ youtube("QH2-TGUlwu4") }}
