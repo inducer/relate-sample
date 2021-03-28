@@ -1,0 +1,139 @@
+title: "Linear Algebra"
+description: |
+    # Linear Algebra Recap
+
+rules:
+    access:
+    -
+        if_has_role: [student, ta, instructor]
+        permissions: [view]
+
+    grade_identifier: null
+
+pages:
+
+-
+type: Page
+id: intro
+content: |
+    ##Построение математических моделей задач линейного программирования
+
+
+    Линейное программирование - это раздел прикладной математики, посвященный методам нахождения наибольших или наименьших значений линейной функции многих переменных, т. е. функций вида
+
+    $$
+    z=c_{1} x_{1}+c_{2} x_{2}+\ldots+c_{2} x_{2} (1)
+    $$
+    причем переменные $x_{j}(j=1,2, \ldots, n)$ должны удовлетворять дополнительным условиям, имеюшим вид линейных уравнений
+    $$
+    a_{i 1} x_{1}+a_{i 2} x_{2}+\ldots+a_{i n} x_{n}=b_{i}  (2)
+    $$
+    или линейных неравенств вида
+    $$
+    a_{i 1} x_{1}+a_{i 2} x_{2}+\ldots+a_{i n} x_{n} \leq b_{i}  (3)
+    $$
+    или
+    $$
+    a_{i 1} x_{1}+a_{i 2} x_{2}+\ldots+a_{i n} x_{n} \geq b_{i}  (4)
+    $$
+    где $\quad a_{i j}, b_{i}, c_{j}(i=1,2, \ldots, m ; j=1,2, \ldots, n)-$ действительные числа.
+    Обычно в задачах линейного программирования на переменные налагаются еще условия неотрицательности:
+    $$
+    x_{j} \geq 0(\mathrm{j}=1,2, \ldots, n) (5)
+    $$
+    Линейная функция z называется целевой функцией, или функцией цели, а дополнительные условия (1)-(5) называются ограничениями.
+    Линейное программирование широко используется в экономике, поскольку многие экономические задачи в математической формулировке сводятся к соотношениям (1)-(5), или, иначе говоря, соотношения (1)-(5) являются математической моделью экономической задачи. Построение экономико-математической модели данной задачи выполняется в следуюшем порядке:
+    - вводятся переменные величины задачи:
+    $$
+    x_{j}(j=1,2, \ldots, n), \mathrm{T}
+    $$
+    такие величины, заданием числовых значений которых однозначно определяется один из вариантов исследуемого процесса;
+    - исходя из условий задачи, записываются ограничения, которым должны уДовлетворять введенные переменные, при этом нужно следить, чтобы ни одно из условий не было упущено;
+    - составляется целевая функция, т. е. линейная функция переменных задачи, которая в математической форме выражает критерий выбора лучшего варианта.
+
+    Заметим, что переменные величины задачи могут быть введены не единственным образом, и от их выбора часто зависит сложность математической модели и, следовательно, удобство ее анализа. $\mathrm{B}$ простейших случаях, однако, выбор переменных естественным образом следует из условия задачи.
+
+    Рассмотрим примеры построения математических моделей линейного программирования на следующей странице.
+
+-
+    type: Page
+    id: vectors
+    content: |
+
+        # Vectors
+
+        A vector is pretty straight.
+
+
+-
+    type: Page
+    id: ipynb
+    content: |
+
+      # Ipython notebook render examples
+
+      The following examples were using [this ipynb file](repocur:ipynbs/Ipynb_example.ipynb) in `ipynbs` folder of this repo.
+
+      ## Fully rendered
+
+      The following markdown was used to render the full notebook:
+
+      ```
+      {{ '{{ render_notebook_cells("ipynbs/Ipynb_example.ipynb") }}' }}
+      ```
+
+      Result:
+
+      {{ render_notebook_cells("ipynbs/Ipynb_example.ipynb") }}
+
+      ## Sliced
+
+      We can choose which cells (by their 0-based indices) to be rendered with arg `indices`.
+
+      For example, cells 0 through 4 can be rendered with the following markdown:
+
+
+      ```
+      {{ '{{ render_notebook_cells("ipynbs/Ipynb_example.ipynb", indices=[0,1,2,3,4]) }}' }}
+      ```
+
+      Or using `jinja2` built-in function [`range`](http://jinja.pocoo.org/docs/2.9/templates/#range):
+
+      ```
+      {{ '{{ render_notebook_cells("ipynbs/Ipynb_example.ipynb", indices=range(0,4)) }}' }}
+      ```
+
+      Result:
+
+      {{ render_notebook_cells("ipynbs/Ipynb_example.ipynb", indices=range(0,4)) }}
+
+      ## With markdown cleared
+
+      Use `clear_markdown` to get the result with content of *all* markdown cells cleared:
+
+      ```
+      {{ '{{ render_notebook_cells("ipynbs/Ipynb_example.ipynb", clear_markdown=True) }}' }}
+      ```
+
+      Result:
+
+      {{ render_notebook_cells("ipynbs/Ipynb_example.ipynb", clear_markdown=True) }}
+
+      ## With code execution output cleared
+
+      Use `clear_output` to get the result with output of *all* code cells cleared:
+
+      Result:
+
+      ```
+      {{ '{{ render_notebook_cells("ipynbs/Ipynb_example.ipynb", clear_output=True) }}' }}
+      ```
+
+      {{ render_notebook_cells("ipynbs/Ipynb_example.ipynb", clear_output=True) }}
+
+
+completion_text: |
+
+    # End of Linear Algebra Recap
+
+    Now you're ready to take the [quiz](flow:quiz-test).

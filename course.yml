@@ -16,10 +16,10 @@ chunks:
 
         # Hi there!
 
-        Check out the [linear algebra recap](flow:001-linalg-recap). Do it now. Do it.
+        Check out the [linear algebra recap](flow:101-linear). Do it now. Do it.
 
         You can also go there using a
-        <a href="flow:001-linalg-recap" role="button" class="btn btn-default">Bootstrap button</a>.
+        <a href="flow:101-linear" role="button" class="btn btn-default">Bootstrap button</a>.
 
         You can also jump directly to the [sample quiz](flow:quiz-test).
 
