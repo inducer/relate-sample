@@ -12,5 +12,7 @@ answers:
   - <plain>matrix
   - <case_sens_plain>Eigenmatrix
   - <regex>(?:linear\s+)?\s*map
-  - <case_sens_regex>(?:operator\s+)?\s*map
+  - type: regex
+    flags: []
+    value: (?:operator\s+)?\s*map
 
