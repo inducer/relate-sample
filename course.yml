@@ -19,7 +19,7 @@ chunks:
         Check out the [linear algebra recap](flow:001-linalg-recap). Do it now. Do it.
 
         You can also go there using a
-        <a href="flow:001-linalg-recap" role="button" class="btn btn-default">Bootstrap button</a>.
+        <a href="flow:001-linalg-recap" role="button" class="btn btn-primary">Bootstrap button</a>.
 
         You can also jump directly to the [sample quiz](flow:quiz-test).
 
@@ -50,7 +50,7 @@ chunks:
     rules:
     -
         if_in_facility: test_center
-        if_after: 2015-06-01
+        if_after: 2022-06-01
         weight: 200
 
     -
@@ -61,4 +61,4 @@ chunks:
 
         # Welcome to the computer-based testing facility!
 
-        <a href="flow:exam-1" class="btn btn-default">Start exam &raquo;</a>
+        <a href="flow:exam-1" class="btn btn-secondary">Start exam &raquo;</a>

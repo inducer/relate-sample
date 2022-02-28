@@ -9,14 +9,28 @@ prompt: |
 
 question: |
 
-    Foo and [[blank1]] are often used in code examples, or
-    tutorials. $\frac{1}{5}$ is equivalent to [[blank_2]].
+    Foo and another "word" are often used in code examples or tutorials.
+    What is that word?
 
-    The correct answer for this choice question is [[choice_a]].
-    The Upper case of "foo" is [[choice2]].
+    [[blank1]] 
 
-    One dollar is [[blank3]], and five percent is [[blank4]], and "Bar"
-    wrapped by a pair of parentheses is [[blank5]].
+    $\frac{1}{5}$ is equivalent to which number?
+    [[blank_2]]
+
+    The correct answer for this choice question is:
+    [[choice_a]]
+
+    The Upper case of "foo" is:
+    [[choice2]]
+
+    One dollar is:
+    [[blank3]]
+
+    Five percent is:
+    [[blank4]]
+
+    "Bar" wrapped by a pair of parentheses is:
+    [[blank5]]
 
 answers:
 
