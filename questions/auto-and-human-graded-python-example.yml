@@ -48,7 +48,8 @@ correct_code: |
 
 rubric: |
 
-    The code has to be squeaky-clean.
+    - The code has to be squeaky-clean. [pts:/2]
+    - The code has to do what it claims to. [pts:/2]
 
 initial_code: |
 
