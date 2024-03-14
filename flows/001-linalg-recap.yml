@@ -22,7 +22,7 @@ pages:
         Yadda yadda.
 
         {% from "content-macros.jinja" import youtube %}
-        {{ youtube("QH2-TGUlwu4") }}
+        {{ youtube("2yJgwwDcgV8") }}
 
 -
     type: Page
