@@ -1,0 +1,54 @@
+title: "Create an instant flow with one multiple choice question"
+
+description: |
+  Instructions on filling out this form
+type: flow
+
+access_roles: [instructor]
+
+fields:
+  - id: title
+    type: Text
+    value: "InClass quiz"
+    label: "Title"
+
+  - id: description
+    type: Text
+    value: ""
+    label: "Question"
+
+  - id: duration
+    type: Integer
+    value: 20
+    label: "Duration in minutes for the flow"
+
+  - id: choice1
+    type: Text
+    value: "(a)"
+    label: "Correct choice"
+
+  - id: choice2
+    type: Text
+    value: "(b)"
+    label: "Incorrect choice"
+
+  - id: choice3
+    type: Text
+    value: "(c)"
+    label: "Incorrect choice"
+
+  - id: template_in
+    type: Hidden
+    value: "flows/instant_flow.jinja"
+
+  - id: template_out
+    type: Hidden
+    value: "flows/instant_flow.yml"
+
+  - id: announce
+    type: Choice
+    choices:
+     - ~DEFAULT~ True
+     - False
+    label: "Announce to the class"
+
