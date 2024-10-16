@@ -1,21 +1,14 @@
-type: FileUploadQuestion
-id: proof_upload
+type: HumanGradedRichTextQuestion
+id: proof_rich
 access_rules:
     add_permissions:
         - change_answer
 value: 5
-maximum_megabytes: 0.5
 prompt: |
 
-    # Pythagorean Theorem via PDF Upload
+    # Pythagorean Theorem via Rich Text
 
     Prove that $$\|a\|^2 +\|b\|^2=\|a + b\|^2$$ if $a\cdot b$ = 0.
-
-    In the file upload box below, provide a PDF with your writeup.
-
-mime_types:
-
-    - application/pdf
 
 rubric: |
 

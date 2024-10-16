@@ -142,6 +142,8 @@ groups:
     -
         {{ indented_include("questions/pdf-file-upload-example.yml", 8) }}
     -
+        {{ indented_include("questions/rich-text-example.yml", 8) }}
+    -
         {{ indented_include("questions/any-file-upload-example.yml", 8) }}
     -
         {{ indented_include("questions/human-graded-text-example.yml", 8) }}
