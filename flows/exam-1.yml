@@ -28,24 +28,28 @@ rules:
         permissions: []
 
     -
-        if_in_facility: test_center
-        if_session_duration_shorter_than_minutes: 0.5
-        permissions: [view, submit_answer, end_session, see_session_time, lock_down_as_exam_session]
+        if_has_role: [instructor]
+        permissions: [view, submit_answer, change_answer, end_session, see_correctness, see_session_time]
 
     -
-        if_in_facility: test_center
-        message: "You exam will end soon."
-        if_session_duration_shorter_than_minutes: 1
-        permissions: [view, submit_answer, end_session, see_session_time, lock_down_as_exam_session]
+        if_in_facility: "cbtf"
+        if_session_duration_shorter_than_minutes: 45  # length until warning appears
+        permissions: [view, submit_answer, change_answer, end_session, see_correctness, see_session_time, lock_down_as_exam_session]
 
     -
-        if_in_facility: test_center
+        if_in_facility: "cbtf"
+        message: "Your exam will end soon."
+        if_session_duration_shorter_than_minutes: 120  # keep in mind DRES students!
+        permissions: [view, submit_answer, change_answer, end_session, see_correctness, see_session_time, lock_down_as_exam_session]
+
+    -
+        if_in_facility: "cbtf"
         if_in_progress: True
-        message: "You exam has ended. You may no longer make changes. Please click 'Submit assignment' to finish."
-        permissions: [view, end_session, see_correctness, see_session_time, lock_down_as_exam_session]
+        message: "Your exam has ended.  You may no longer make changes to your answers.  Please click 'Submit assignment' to finish."
+        permissions: [view, change_answer, end_session, see_correctness, see_correctness, see_session_time, lock_down_as_exam_session]
 
     -
-        if_in_facility: test_center
+        if_in_facility: "cbtf"
         permissions: [view, see_correctness, see_session_time]
 
     -
