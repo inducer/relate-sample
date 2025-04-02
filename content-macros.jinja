@@ -20,16 +20,16 @@
 
 {% macro collapsible(title, id="collapsery") -%}
 {# don't be tempted to add indentation here, markdown will eat your markup#}
-<div class="card mb-3" markdown="block"><div class="card-header">
+<div class="card mb-3" markdown="span"><div class="card-header">
   <h5 class="card-title dropdown-toggle">
-  <a class="text-decoration-none link-dark"
+  <a class="text-decoration-none link-secondary"
   data-bs-toggle="collapse" href="#{{ id }}" aria-expanded="false" aria-controls="{{ id }}">
   {{ title }}
   </a>
   </h5>
 </div>
-<div id="{{ id }}" class="collapse">
-<div class="card-body">
+<div id="{{ id }}" class="collapse" markdown="1">
+<div class="card-body" markdown="1">
 {{ caller() }}
 </div>
 </div>
