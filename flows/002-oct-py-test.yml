@@ -1,0 +1,144 @@
+title: "Octave and Python Code"
+description: |
+    # Octave and Python Code
+
+rules:
+    access:
+    -
+        if_has_role: [student, ta, instructor]
+        permissions: [view,end_session]
+
+    grade_identifier: null
+
+pages:
+
+################################################################################
+-
+    type: OctaveCodeQuestion
+    id: octave_test_apply_function
+    value: 1
+    timeout: 10
+    title: "Applying a Function in Octave"
+    access_rules:
+        add_permissions:
+            - submit_answer
+            - change_answer
+            - see_correctness
+
+    prompt: |
+        ### Applying a Function in Octave
+
+        Apply the provided function `f` to the provided array `x`.  Store the result in `y`.
+
+        (`x` has the value `[ 1 2 3 4 5 ]` and is already defined and available for you.)
+
+    setup_code: |
+        x = [ 1 2 3 4 5 ];
+
+    initial_code: |
+        y = f( ___ );
+
+    names_for_user: [ x ]
+
+    names_from_user: [ y ]
+
+    data_files: [ "./question-data/f.m" ]
+
+    test_code: |
+        pts = 0.0
+
+        try:
+            from oct2py import octave
+            from oct2py import Struct,Cell,StructArray
+
+            import numpy as np
+
+            test_y = octave.eval( "exp( -[ 1 2 3 4 5 ] .^ 2 );" )
+
+            assert np.allclose( y,test_y )
+            pts = 1.0
+
+        except NameError:
+            feedback.finish( 0.0,'Something is wrong.  Have you created `y`?' )
+        except AssertionError:
+            feedback.finish( 0.0,'Something is wrong.  Have you used `f` on `x` to obtain `y`?' )
+        except:
+            feedback.finish( 0.0,'Keep trying.  If you get stuck, please ask a TA for help on Piazza or office hours.' )
+
+        if np.isclose( pts,1.0 ):
+            feedback.finish( pts,'Success!  You have evaluated the function correctly.' )
+        else:
+            feedback.finish( pts,'Keep trying.  If you get stuck, please ask a TA for help on Piazza or office hours.' )
+
+
+    correct_code: |
+        y = f(x);
+
+################################################################################
+-
+    type: PythonCodeQuestion
+    id: python_test_apply_function
+    value: 1
+    timeout: 10
+    title: "Applying a Function in Python"
+    access_rules:
+        add_permissions:
+            - submit_answer
+            - change_answer
+            - see_correctness
+
+    prompt: |
+        ### Applying a Function in Python
+
+        Apply the provided function `f` to the provided array `x`.  Store the result in `y`.
+
+        (`x` has the value `numpy.ndarray( [ 1,2,3,4,5 ] )` and is already defined and available for you.)
+
+    setup_code: |
+        import numpy as np
+        x = np.array( [ 1,2,3,4,5 ] );
+        def f( x ):
+            return np.exp( -x**2 )
+
+    initial_code: |
+        y = f( ___ );
+
+    names_for_user: [ x,f ]
+
+    names_from_user: [ y ]
+
+    data_files: [ ]
+
+    test_code: |
+        pts = 0.0
+
+        try:
+            import numpy as np
+
+            test_x = np.array( [ 1,2,3,4,5 ] );
+            test_y = np.exp( -x ** 2 )
+
+            assert np.allclose( y,test_y )
+            pts = 1.0
+
+        except NameError:
+            feedback.finish( 0.0,'Something is wrong.  Have you created `y`?' )
+        except AssertionError:
+            feedback.finish( 0.0,'Something is wrong.  Have you used `f` on `x` to obtain `y`?' )
+        except:
+            feedback.finish( 0.0,'Keep trying.  If you get stuck, please ask a TA for help on Piazza or office hours.' )
+
+        if np.isclose( pts,1.0 ):
+            feedback.finish( pts,'Success!  You have evaluated the function correctly.' )
+        else:
+            feedback.finish( pts,'Keep trying.  If you get stuck, please ask a TA for help on Piazza or office hours.' )
+
+
+    correct_code: |
+        y = f(x);
+
+completion_text: |
+
+    # End of Octave and Python Code Test
+
+    Hopefully things are working well!
