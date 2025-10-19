@@ -1,4 +1,5 @@
-unenrolled:
-- "*.png"
-- "*.jpeg"
-- "*.jpg"
+access_if_has_role:
+    unenrolled:
+    - "*.png"
+    - "*.jpeg"
+    - "*.jpg"
